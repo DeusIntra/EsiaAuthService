@@ -1,0 +1,357 @@
+Index: pom.xml
+===================================================================
+--- pom.xml	(revision 6803)
++++ pom.xml	(working copy)
+@@ -259,7 +259,7 @@
+         <dependency>
+             <groupId>org.bouncycastle</groupId>
+             <artifactId>bcprov-jdk15on</artifactId>
+-            <version>1.49</version>
++            <version>1.50</version>
+             <type>jar</type>
+             <scope>compile</scope>
+             <optional>true</optional>
+@@ -267,7 +267,7 @@
+         <dependency>
+             <groupId>org.bouncycastle</groupId>
+             <artifactId>bcpkix-jdk15on</artifactId>
+-            <version>1.49</version>
++            <version>1.50</version>
+             <type>jar</type>
+             <scope>compile</scope>
+             <optional>true</optional>
+@@ -282,10 +282,41 @@
+         <dependency>
+             <groupId>org.apache.santuario</groupId>
+             <artifactId>xmlsec</artifactId>
+-            <version>1.5.1</version>
++            <version>1.5.0</version>
+             <scope>compile</scope>
+             <optional>true</optional>
+         </dependency>
++        <dependency>
++            <groupId>xalan</groupId>
++            <artifactId>xalan</artifactId>
++            <version>2.7.0</version>
++            <scope>compile</scope>
++            <optional>true</optional>
++        </dependency>
++        <dependency>
++            <groupId>ru.crypto</groupId>
++            <artifactId>JCP</artifactId>
++            <version>2.0</version>
++            <type>jar</type>
++            <scope>compile</scope>
++            <optional>true</optional>
++        </dependency>
++        <dependency>
++            <groupId>ru.crypto</groupId>
++            <artifactId>JCPRequest</artifactId>
++            <version>2.0</version>
++            <type>jar</type>
++            <scope>compile</scope>
++            <optional>true</optional>
++        </dependency>
++        <dependency>
++            <groupId>ru.crypto</groupId>
++            <artifactId>JCPRevTools</artifactId>
++            <version>2.0</version>
++            <type>jar</type>
++            <scope>compile</scope>
++            <optional>true</optional>
++        </dependency>
+     </dependencies>
+     <reporting>
+         <plugins>
+Index: src/main/java/com/itextpdf/text/pdf/PdfAppearance.java
+===================================================================
+--- src/main/java/com/itextpdf/text/pdf/PdfAppearance.java	(revision 6803)
++++ src/main/java/com/itextpdf/text/pdf/PdfAppearance.java	(working copy)
+@@ -53,6 +53,8 @@
+ 
+ public class PdfAppearance extends PdfTemplate {
+ 
++    public static final PdfName CRYPTOPRO_SIGNED = PdfName.ADOBE_CryptoProPDF;
++
+     public static final HashMap<String, PdfName> stdFieldFontNames = new HashMap<String, PdfName>();
+     static {
+         stdFieldFontNames.put("Courier-BoldOblique", new PdfName("CoBO"));
+@@ -80,6 +82,7 @@
+         stdFieldFontNames.put("STSongStd-Light", new PdfName("STSo"));
+         stdFieldFontNames.put("HYSMyeongJoStd-Medium", new PdfName("HySm"));
+         stdFieldFontNames.put("KozMinPro-Regular", new PdfName("KaMi"));
++        stdFieldFontNames.put("Crypto-Pro", CRYPTOPRO_SIGNED);
+     }
+ 
+     /**
+Index: src/main/java/com/itextpdf/text/pdf/PdfName.java
+===================================================================
+--- src/main/java/com/itextpdf/text/pdf/PdfName.java	(revision 6803)
++++ src/main/java/com/itextpdf/text/pdf/PdfName.java	(working copy)
+@@ -128,6 +128,8 @@
+     /** A name */
+     public static final PdfName ADOBE_PPKMS = new PdfName("Adobe.PPKMS");
+     /** A name */
++    public static final PdfName ADOBE_CryptoProPDF = new PdfName("CryptoPro PDF");
++    /** A name */
+     public static final PdfName AESV2 = new PdfName("AESV2");
+     /** A name */
+     public static final PdfName AESV3 = new PdfName("AESV3");
+Index: src/main/java/com/itextpdf/text/pdf/security/CertificateVerification.java
+===================================================================
+--- src/main/java/com/itextpdf/text/pdf/security/CertificateVerification.java	(revision 6803)
++++ src/main/java/com/itextpdf/text/pdf/security/CertificateVerification.java	(working copy)
+@@ -60,6 +60,7 @@
+ import org.bouncycastle.cms.jcajce.JcaSimpleSignerInfoVerifierBuilder;
+ import org.bouncycastle.operator.jcajce.JcaContentVerifierProviderBuilder;
+ import org.bouncycastle.tsp.TimeStampToken;
++import ru.CryptoPro.reprov.x509.X509CertImpl;
+ 
+ /**
+  * This class consists of some methods that allow you to verify certificates.
+@@ -142,7 +143,22 @@
+ 	                        return result;
+ 	                    }
+ 	                    catch (Exception e) {
+-	                        continue;
++
++                            //
++	                        // continue;
++                            //
++							// Возможно, мы имеем дело с ГОСТ сертификатом
++                            //
++
++							try {
++
++							    X509Certificate tmpCert = new X509CertImpl(certStoreX509.getEncoded());
++							    cert.verify(tmpCert.getPublicKey());
++
++							} catch (Exception ee) {
++							    continue;
++							}
++
+ 	                    }
+ 	                }
+ 	                catch (Exception ex) {
+@@ -161,6 +177,19 @@
+ 	                break;
+ 	            }
+ 	            catch (Exception e) {
++
++                    //
++					// Возможно, мы имеем дело с ГОСТ сертификатом
++                    //
++					try {
++
++						X509Certificate tmpCert = new X509CertImpl(certNext.getEncoded());
++						cert.verify(tmpCert.getPublicKey());
++
++					} catch (Exception ee) {
++                        // ignore
++					}
++
+ 	            }
+ 	        }
+ 	        if (j == certs.length) {
+Index: src/main/java/com/itextpdf/text/pdf/security/DigestAlgorithms.java
+===================================================================
+--- src/main/java/com/itextpdf/text/pdf/security/DigestAlgorithms.java	(revision 6803)
++++ src/main/java/com/itextpdf/text/pdf/security/DigestAlgorithms.java	(working copy)
+@@ -44,6 +44,8 @@
+  */
+ package com.itextpdf.text.pdf.security;
+ 
++import ru.CryptoPro.JCP.JCP;
++
+ import java.io.IOException;
+ import java.io.InputStream;
+ import java.security.GeneralSecurityException;
+@@ -111,6 +113,10 @@
+         digestNames.put("1.3.36.3.3.1.4", "RIPEMD256");
+         digestNames.put("1.2.643.2.2.9", "GOST3411");
+ 
++        digestNames.put(JCP.GOST_DIGEST_OID, JCP.GOST_DIGEST_NAME); // ГОСТ Р 34.11-94
++        digestNames.put(JCP.GOST_DIGEST_2012_256_OID, JCP.GOST_DIGEST_2012_256_NAME); // ГОСТ Р 34.11-2012 (256)
++        digestNames.put(JCP.GOST_DIGEST_2012_512_OID, JCP.GOST_DIGEST_2012_512_NAME); // ГОСТ Р 34.11-2012 (512)
++
+         fixNames.put("SHA256", SHA256);
+         fixNames.put("SHA384", SHA384);
+         fixNames.put("SHA512", SHA512);
+@@ -136,6 +142,11 @@
+         allowedDigests.put("RIPEMD256", "1.3.36.3.2.3");
+         allowedDigests.put("RIPEMD-256", "1.3.36.3.2.3");
+         allowedDigests.put("GOST3411", "1.2.643.2.2.9");
++
++        allowedDigests.put(JCP.GOST_DIGEST_NAME, JCP.GOST_DIGEST_OID); // ГОСТ Р 34.11-94
++        allowedDigests.put(JCP.GOST_DIGEST_2012_256_NAME, JCP.GOST_DIGEST_2012_256_OID); // ГОСТ Р 34.11-2012 (256)
++        allowedDigests.put(JCP.GOST_DIGEST_2012_512_NAME, JCP.GOST_DIGEST_2012_512_OID); // ГОСТ Р 34.11-2012 (512)
++
+     }
+ 
+     public static MessageDigest getMessageDigestFromOid(String digestOid, String provider)
+Index: src/main/java/com/itextpdf/text/pdf/security/EncryptionAlgorithms.java
+===================================================================
+--- src/main/java/com/itextpdf/text/pdf/security/EncryptionAlgorithms.java	(revision 6803)
++++ src/main/java/com/itextpdf/text/pdf/security/EncryptionAlgorithms.java	(working copy)
+@@ -44,6 +44,8 @@
+  */
+ package com.itextpdf.text.pdf.security;
+ 
++import ru.CryptoPro.JCP.JCP;
++
+ import java.util.HashMap;
+ 
+ /**
+@@ -51,10 +53,18 @@
+  */
+ public class EncryptionAlgorithms {
+ 
+-	/** Maps IDs of encryption algorithms with its human-readable name. */
++    public static final String ID_GOST3410EL   = ru.CryptoPro.JCP.params.Consts.OID_19; // набор параметров ГОСТ Р 34.10-2001
++    public static final String ID_GOST3410DHEL = ru.CryptoPro.JCP.params.Consts.OID_98; // набор параметров ГОСТ Р 34.10-2001
++    public static final String ID_GOST3410EL_2012_256   = ru.CryptoPro.JCP.params.Consts.OID_PARAMS_SIG_2012_256; // набор параметров ГОСТ Р 34.10-2012 (256)
++    public static final String ID_GOST3410DHEL_2012_256 = ru.CryptoPro.JCP.params.Consts.OID_PARAMS_EXC_2012_256; // набор параметров ГОСТ Р 34.10-2012 (256) DH
++    public static final String ID_GOST3410EL_2012_512   = ru.CryptoPro.JCP.params.Consts.OID_PARAMS_SIG_2012_512; // набор параметров ГОСТ Р 34.10-2012 (512)
++    public static final String ID_GOST3410DHEL_2012_512 = ru.CryptoPro.JCP.params.Consts.OID_PARAMS_EXC_2012_512; // набор параметров ГОСТ Р 34.10-2012 (512) DH
++
++    /** Maps IDs of encryption algorithms with its human-readable name. */
+ 	static final HashMap<String, String> algorithmNames = new HashMap<String, String>();
+ 
+ 	static {
++
+         algorithmNames.put("1.2.840.113549.1.1.1", "RSA");
+         algorithmNames.put("1.2.840.10040.4.1", "DSA");
+         algorithmNames.put("1.2.840.113549.1.1.2", "RSA");
+@@ -71,7 +81,15 @@
+         algorithmNames.put("1.3.36.3.3.1.2", "RSA");
+         algorithmNames.put("1.3.36.3.3.1.3", "RSA");
+         algorithmNames.put("1.3.36.3.3.1.4", "RSA");
+-        algorithmNames.put("1.2.643.2.2.19", "ECGOST3410");
++        // algorithmNames.put("1.2.643.2.2.19", "ECGOST3410");
++
++        algorithmNames.put(ID_GOST3410EL,   JCP.GOST_EL_DEGREE_NAME); // набор параметров ГОСТ Р 34.10-2001
++        algorithmNames.put(ID_GOST3410DHEL, JCP.GOST_EL_DH_NAME); 	  // набор параметров ГОСТ Р 34.10-2001 DH
++        algorithmNames.put(ID_GOST3410EL_2012_256,   JCP.GOST_EL_2012_256_NAME); // набор параметров ГОСТ Р 34.10-2012 (256)
++        algorithmNames.put(ID_GOST3410DHEL_2012_256, JCP.GOST_DH_2012_256_NAME); // набор параметров ГОСТ Р 34.10-2012 (256) DH
++        algorithmNames.put(ID_GOST3410EL_2012_512,   JCP.GOST_EL_2012_512_NAME); // набор параметров ГОСТ Р 34.10-2012 (512)
++        algorithmNames.put(ID_GOST3410DHEL_2012_512, JCP.GOST_DH_2012_512_NAME); // набор параметров ГОСТ Р 34.10-2012 (512) DH
++
+ 	}
+ 
+ 	/**
+Index: src/main/java/com/itextpdf/text/pdf/security/PdfPKCS7.java
+===================================================================
+--- src/main/java/com/itextpdf/text/pdf/security/PdfPKCS7.java	(revision 6803)
++++ src/main/java/com/itextpdf/text/pdf/security/PdfPKCS7.java	(working copy)
+@@ -57,11 +57,7 @@
+ import java.security.PublicKey;
+ import java.security.Signature;
+ import java.security.SignatureException;
+-import java.security.cert.CRL;
+-import java.security.cert.Certificate;
+-import java.security.cert.CertificateFactory;
+-import java.security.cert.X509CRL;
+-import java.security.cert.X509Certificate;
++import java.security.cert.*;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+ import java.util.Calendar;
+@@ -117,6 +113,9 @@
+ import com.itextpdf.text.error_messages.MessageLocalization;
+ import com.itextpdf.text.pdf.PdfName;
+ import com.itextpdf.text.pdf.security.MakeSignature.CryptoStandard;
++import ru.CryptoPro.JCP.JCP;
++import ru.CryptoPro.JCP.Util.PaneDefaultProvider;
++import ru.CryptoPro.reprov.x509.X509CertImpl;
+ 
+ /**
+  * This class does all the processing related to signing
+@@ -169,6 +168,30 @@
+             else if (digestEncryptionAlgorithmOid.equals("DSA")) {
+                 digestEncryptionAlgorithmOid = SecurityIDs.ID_DSA;
+             }
++            // набор параметров ГОСТ Р 34.10-2001
++            else if (digestEncryptionAlgorithmOid.equals(JCP.GOST_EL_DEGREE_NAME)) {
++                digestEncryptionAlgorithmOid = EncryptionAlgorithms.ID_GOST3410EL;
++            }
++            // набор параметров ГОСТ Р 34.10-2001 DH
++            else  if (digestEncryptionAlgorithmOid.equals(JCP.GOST_EL_DH_NAME)) {
++                digestEncryptionAlgorithmOid = EncryptionAlgorithms.ID_GOST3410DHEL;
++            }
++            // набор параметров ГОСТ Р 34.10-2012 (256)
++            else if (digestEncryptionAlgorithmOid.equals(JCP.GOST_EL_2012_256_NAME)) {
++                digestEncryptionAlgorithmOid = EncryptionAlgorithms.ID_GOST3410EL_2012_256;
++            }
++            // набор параметров ГОСТ Р 34.10-2012 (256) DH
++            else if (digestEncryptionAlgorithmOid.equals(JCP.GOST_DH_2012_256_NAME)) {
++                digestEncryptionAlgorithmOid = EncryptionAlgorithms.ID_GOST3410DHEL_2012_256;
++            }
++            // набор параметров ГОСТ Р 34.10-2012 (512)
++            else if (digestEncryptionAlgorithmOid.equals(JCP.GOST_EL_2012_512_NAME)) {
++                digestEncryptionAlgorithmOid = EncryptionAlgorithms.ID_GOST3410EL_2012_512;
++            }
++            // набор параметров ГОСТ Р 34.10-2012 (512) DH
++            else if (digestEncryptionAlgorithmOid.equals(JCP.GOST_DH_2012_512_NAME)) {
++                digestEncryptionAlgorithmOid = EncryptionAlgorithms.ID_GOST3410DHEL_2012_512;
++            }
+             else {
+                 throw new NoSuchAlgorithmException(MessageLocalization.getComposedMessage("unknown.key.algorithm.1", digestEncryptionAlgorithmOid));
+             }
+@@ -659,8 +682,16 @@
+             }
+             else if (digestEncryptionAlgorithm.equals("ECDSA")) {
+                 this.digestEncryptionAlgorithmOid = SecurityIDs.ID_ECDSA;
+-            }
+-            else
++            } else if (
++                digestEncryptionAlgorithm.equals(EncryptionAlgorithms.ID_GOST3410EL)            ||
++                digestEncryptionAlgorithm.equals(EncryptionAlgorithms.ID_GOST3410DHEL)          ||
++                digestEncryptionAlgorithm.equals(EncryptionAlgorithms.ID_GOST3410EL_2012_256)   ||
++                digestEncryptionAlgorithm.equals(EncryptionAlgorithms.ID_GOST3410DHEL_2012_256) ||
++                digestEncryptionAlgorithm.equals(EncryptionAlgorithms.ID_GOST3410EL_2012_512)   ||
++                digestEncryptionAlgorithm.equals(EncryptionAlgorithms.ID_GOST3410DHEL_2012_512)
++                ) {
++                this.digestEncryptionAlgorithmOid = digestEncryptionAlgorithm;
++            } else
+                 throw new ExceptionConverter(new NoSuchAlgorithmException(MessageLocalization.getComposedMessage("unknown.key.algorithm.1", digestEncryptionAlgorithm)));
+         }
+     }
+@@ -698,7 +729,37 @@
+         else
+             signature = Signature.getInstance(digestAlgorithm, provider);
+ 
+-        signature.initVerify(key);
++        // signature.initVerify(key);
++        PublicKey pk;
++
++        // Если провайдер JCP или Java CSP, полагаем, что
++        // имеем дело с ГОСТ (BC может передать null в key).
++
++        if ( (provider != null && (provider.equalsIgnoreCase(JCP.PROVIDER_NAME) ||
++              provider.equalsIgnoreCase(PaneDefaultProvider.ALTERNATIVE_PROVIDER_NAME))) ||
++            (getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_NAME)          ||
++             getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_OID)           ||
++             getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_2012_256_NAME) ||
++             getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_2012_256_OID)  ||
++             getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_2012_512_NAME) ||
++             getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_2012_512_OID))) {
++
++            Certificate tmpCert;
++
++            try {
++                tmpCert = new X509CertImpl(signCert.getEncoded());
++            } catch (CertificateException e) {
++                throw new InvalidKeyException(e);
++            }
++
++            pk = tmpCert.getPublicKey();
++
++        }
++        else {
++            pk = signCert.getPublicKey();
++        }
++
++        signature.initVerify(pk);
+         return signature;
+     }
+     

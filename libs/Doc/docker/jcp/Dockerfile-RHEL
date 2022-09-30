@@ -1,0 +1,65 @@
+FROM registry.access.redhat.com/fuse7/fuse-java-openshift:1.4-14
+
+# Пример установки JCP и запуска примера TLS клиента для подключения к
+# серверу с клиентской аутентификацией.
+#
+# Дистрибутив версии JCP_VERSION должен находиться в одной папке с Dockerfile.
+# Запуск производится с помощью команды, например, для JCP версии 2.0.41618:
+# docker build --no-cache -t jcp-inst-rhel --build-arg JCP_VERSION=2.0.41618 .
+
+ARG JCP_VERSION
+
+USER root
+CMD ["id"]
+
+RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment
+RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+RUN echo "LANG=en_US.UTF-8" > /etc/locale.conf
+# RUN locale-gen en_US.UTF-8
+
+CMD ["locale", "-a"]
+CMD ["locale"]
+
+ENV LANG     en_US.UTF-8
+ENV LC_ALL   en_US.UTF-8
+ENV LC_CTYPE en_US.UTF-8
+
+CMD ["ls", "-las"]
+
+# Копирование дистрибутива JCP из контекста в папку distrib в корень системы.
+
+RUN mkdir -p /distrib
+COPY . /distrib/
+
+# Смена папки.
+
+WORKDIR /distrib
+CMD ["ls", "-las"]
+
+# Копирование клиентского контейнера.
+
+RUN mkdir -p /var/opt/cprocsp
+RUN mkdir -p /var/opt/cprocsp/keys
+RUN mkdir -p /var/opt/cprocsp/keys/root
+RUN cp -r /distrib/MikhailU.000 /var/opt/cprocsp/keys/root/
+
+# Проверка java.
+
+CMD ["java", "-version"]
+
+# Распаковка дистрибутива JCP.
+
+RUN unzip -q jcp-$JCP_VERSION.zip
+WORKDIR jcp-$JCP_VERSION
+
+# Установка JCP из дистрибутива.
+
+RUN java -cp .:*: ru.CryptoPro.Installer.InstallerConsole -force -install -jcp -jcryptop -cpssl
+
+# Проверка JCP и запуск примера.
+
+WORKDIR /distrib
+
+RUN echo "#!/bin/sh" > ./test.sh && echo "" >> ./test.sh && echo "java ru.CryptoPro.JCP.tools.License -required" >> ./test.sh && echo "java ru.CryptoPro.JCP.tools.Check -all" >> ./test.sh && echo "keytool -list -storetype HDImageStore -keystore NONE -storepass 1 -providername JCP" >> ./test.sh && echo "java SAASDevCheck" >> ./test.sh && chmod +x ./test.sh
+
+CMD ["./test.sh"]

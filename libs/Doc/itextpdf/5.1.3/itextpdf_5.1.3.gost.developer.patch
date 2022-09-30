@@ -1,0 +1,2430 @@
+Index: .idea/libraries/Maven__junit_junit_4_8_2.xml
+===================================================================
+--- .idea/libraries/Maven__junit_junit_4_8_2.xml	(revision 0)
++++ .idea/libraries/Maven__junit_junit_4_8_2.xml	(working copy)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: junit:junit:4.8.2">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.2/junit-4.8.2.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.2/junit-4.8.2-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.2/junit-4.8.2-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/org_bouncycastle_bcmail_jdk16_1_46.xml
+===================================================================
+--- .idea/libraries/org_bouncycastle_bcmail_jdk16_1_46.xml	(revision 0)
++++ .idea/libraries/org_bouncycastle_bcmail_jdk16_1_46.xml	(working copy)
+@@ -0,0 +1,11 @@
++<component name="libraryTable">
++  <library name="org.bouncycastle:bcmail-jdk16:1.46" type="repository">
++    <properties maven-id="org.bouncycastle:bcmail-jdk16:1.46" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcmail-jdk16/1.46/bcmail-jdk16-1.46.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk16/1.46/bcprov-jdk16-1.46.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/org_bouncycastle_bcprov_jdk16_1_46.xml
+===================================================================
+--- .idea/libraries/org_bouncycastle_bcprov_jdk16_1_46.xml	(revision 0)
++++ .idea/libraries/org_bouncycastle_bcprov_jdk16_1_46.xml	(working copy)
+@@ -0,0 +1,10 @@
++<component name="libraryTable">
++  <library name="org.bouncycastle:bcprov-jdk16:1.46" type="repository">
++    <properties maven-id="org.bouncycastle:bcprov-jdk16:1.46" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk16/1.46/bcprov-jdk16-1.46.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/org_bouncycastle_bctsp_jdk16_1_46.xml
+===================================================================
+--- .idea/libraries/org_bouncycastle_bctsp_jdk16_1_46.xml	(revision 0)
++++ .idea/libraries/org_bouncycastle_bctsp_jdk16_1_46.xml	(working copy)
+@@ -0,0 +1,12 @@
++<component name="libraryTable">
++  <library name="org.bouncycastle:bctsp-jdk16:1.46" type="repository">
++    <properties maven-id="org.bouncycastle:bctsp-jdk16:1.46" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bctsp-jdk16/1.46/bctsp-jdk16-1.46.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk16/1.46/bcprov-jdk16-1.46.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcmail-jdk16/1.46/bcmail-jdk16-1.46.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/ru_crypto_JCPRevTools_2_0.xml
+===================================================================
+--- .idea/libraries/ru_crypto_JCPRevTools_2_0.xml	(revision 0)
++++ .idea/libraries/ru_crypto_JCPRevTools_2_0.xml	(working copy)
+@@ -0,0 +1,35 @@
++<component name="libraryTable">
++  <library name="ru.crypto:JCPRevTools:2.0" type="repository">
++    <properties maven-id="ru.crypto:JCPRevTools:2.0" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCPRevTools/2.0/JCPRevTools-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCP/2.0/JCP-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/ASN1P/2.0/ASN1P-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/objsys/asn1rt/5.74.0/asn1rt-5.74.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/intellij/forms_rt/6.0.5/forms_rt-6.0.5.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-commons/2.2.3/asm-commons-2.2.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/3.0/asm-tree-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.0/asm-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/jgoodies/forms/1.0.7/forms-1.0.7.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/jdom/jdom/1.0/jdom-1.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/google/android/android/2.2.1/android-2.2.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.3/commons-codec-1.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/khronos/opengl-api/gl1.1-android-2.1_r1/opengl-api-gl1.1-android-2.1_r1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/json/json/20080701/json-20080701.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCPInst/2.0/JCPInst-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8/junit-3.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.8/oro-2.0.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.9/log4j-1.2.9.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/ru_crypto_JCP_2_0.xml
+===================================================================
+--- .idea/libraries/ru_crypto_JCP_2_0.xml	(revision 0)
++++ .idea/libraries/ru_crypto_JCP_2_0.xml	(working copy)
+@@ -0,0 +1,34 @@
++<component name="libraryTable">
++  <library name="ru.crypto:JCP:2.0" type="repository">
++    <properties maven-id="ru.crypto:JCP:2.0" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCP/2.0/JCP-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/ASN1P/2.0/ASN1P-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/objsys/asn1rt/5.74.0/asn1rt-5.74.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/intellij/forms_rt/6.0.5/forms_rt-6.0.5.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-commons/2.2.3/asm-commons-2.2.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/3.0/asm-tree-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.0/asm-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/jgoodies/forms/1.0.7/forms-1.0.7.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/jdom/jdom/1.0/jdom-1.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/google/android/android/2.2.1/android-2.2.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.3/commons-codec-1.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/khronos/opengl-api/gl1.1-android-2.1_r1/opengl-api-gl1.1-android-2.1_r1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/json/json/20080701/json-20080701.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCPInst/2.0/JCPInst-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8/junit-3.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.8/oro-2.0.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.9/log4j-1.2.9.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__junit_junit_4_8_2.xml
+===================================================================
+--- .idea/libraries/Maven__junit_junit_4_8_2.xml	(revision 0)
++++ .idea/libraries/Maven__junit_junit_4_8_2.xml	(working copy)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: junit:junit:4.8.2">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.2/junit-4.8.2.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.2/junit-4.8.2-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.2/junit-4.8.2-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/org_bouncycastle_bcmail_jdk16_1_46.xml
+===================================================================
+--- .idea/libraries/org_bouncycastle_bcmail_jdk16_1_46.xml	(revision 0)
++++ .idea/libraries/org_bouncycastle_bcmail_jdk16_1_46.xml	(working copy)
+@@ -0,0 +1,11 @@
++<component name="libraryTable">
++  <library name="org.bouncycastle:bcmail-jdk16:1.46" type="repository">
++    <properties maven-id="org.bouncycastle:bcmail-jdk16:1.46" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcmail-jdk16/1.46/bcmail-jdk16-1.46.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk16/1.46/bcprov-jdk16-1.46.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/org_bouncycastle_bcprov_jdk16_1_46.xml
+===================================================================
+--- .idea/libraries/org_bouncycastle_bcprov_jdk16_1_46.xml	(revision 0)
++++ .idea/libraries/org_bouncycastle_bcprov_jdk16_1_46.xml	(working copy)
+@@ -0,0 +1,10 @@
++<component name="libraryTable">
++  <library name="org.bouncycastle:bcprov-jdk16:1.46" type="repository">
++    <properties maven-id="org.bouncycastle:bcprov-jdk16:1.46" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk16/1.46/bcprov-jdk16-1.46.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/org_bouncycastle_bctsp_jdk16_1_46.xml
+===================================================================
+--- .idea/libraries/org_bouncycastle_bctsp_jdk16_1_46.xml	(revision 0)
++++ .idea/libraries/org_bouncycastle_bctsp_jdk16_1_46.xml	(working copy)
+@@ -0,0 +1,12 @@
++<component name="libraryTable">
++  <library name="org.bouncycastle:bctsp-jdk16:1.46" type="repository">
++    <properties maven-id="org.bouncycastle:bctsp-jdk16:1.46" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bctsp-jdk16/1.46/bctsp-jdk16-1.46.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk16/1.46/bcprov-jdk16-1.46.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcmail-jdk16/1.46/bcmail-jdk16-1.46.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/ru_crypto_JCPRevTools_2_0.xml
+===================================================================
+--- .idea/libraries/ru_crypto_JCPRevTools_2_0.xml	(revision 0)
++++ .idea/libraries/ru_crypto_JCPRevTools_2_0.xml	(working copy)
+@@ -0,0 +1,35 @@
++<component name="libraryTable">
++  <library name="ru.crypto:JCPRevTools:2.0" type="repository">
++    <properties maven-id="ru.crypto:JCPRevTools:2.0" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCPRevTools/2.0/JCPRevTools-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCP/2.0/JCP-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/ASN1P/2.0/ASN1P-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/objsys/asn1rt/5.74.0/asn1rt-5.74.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/intellij/forms_rt/6.0.5/forms_rt-6.0.5.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-commons/2.2.3/asm-commons-2.2.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/3.0/asm-tree-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.0/asm-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/jgoodies/forms/1.0.7/forms-1.0.7.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/jdom/jdom/1.0/jdom-1.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/google/android/android/2.2.1/android-2.2.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.3/commons-codec-1.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/khronos/opengl-api/gl1.1-android-2.1_r1/opengl-api-gl1.1-android-2.1_r1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/json/json/20080701/json-20080701.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCPInst/2.0/JCPInst-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8/junit-3.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.8/oro-2.0.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.9/log4j-1.2.9.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/ru_crypto_JCP_2_0.xml
+===================================================================
+--- .idea/libraries/ru_crypto_JCP_2_0.xml	(revision 0)
++++ .idea/libraries/ru_crypto_JCP_2_0.xml	(working copy)
+@@ -0,0 +1,34 @@
++<component name="libraryTable">
++  <library name="ru.crypto:JCP:2.0" type="repository">
++    <properties maven-id="ru.crypto:JCP:2.0" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCP/2.0/JCP-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/ASN1P/2.0/ASN1P-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/objsys/asn1rt/5.74.0/asn1rt-5.74.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/intellij/forms_rt/6.0.5/forms_rt-6.0.5.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-commons/2.2.3/asm-commons-2.2.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/3.0/asm-tree-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.0/asm-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/jgoodies/forms/1.0.7/forms-1.0.7.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/jdom/jdom/1.0/jdom-1.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/google/android/android/2.2.1/android-2.2.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.3/commons-codec-1.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/khronos/opengl-api/gl1.1-android-2.1_r1/opengl-api-gl1.1-android-2.1_r1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/json/json/20080701/json-20080701.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCPInst/2.0/JCPInst-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8/junit-3.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.8/oro-2.0.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.9/log4j-1.2.9.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/Maven__junit_junit_4_8_2.xml
+===================================================================
+--- .idea/libraries/Maven__junit_junit_4_8_2.xml	(revision 0)
++++ .idea/libraries/Maven__junit_junit_4_8_2.xml	(working copy)
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: junit:junit:4.8.2">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.2/junit-4.8.2.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.2/junit-4.8.2-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.8.2/junit-4.8.2-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/org_bouncycastle_bcmail_jdk16_1_46.xml
+===================================================================
+--- .idea/libraries/org_bouncycastle_bcmail_jdk16_1_46.xml	(revision 0)
++++ .idea/libraries/org_bouncycastle_bcmail_jdk16_1_46.xml	(working copy)
+@@ -0,0 +1,11 @@
++<component name="libraryTable">
++  <library name="org.bouncycastle:bcmail-jdk16:1.46" type="repository">
++    <properties maven-id="org.bouncycastle:bcmail-jdk16:1.46" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcmail-jdk16/1.46/bcmail-jdk16-1.46.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk16/1.46/bcprov-jdk16-1.46.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/org_bouncycastle_bcprov_jdk16_1_46.xml
+===================================================================
+--- .idea/libraries/org_bouncycastle_bcprov_jdk16_1_46.xml	(revision 0)
++++ .idea/libraries/org_bouncycastle_bcprov_jdk16_1_46.xml	(working copy)
+@@ -0,0 +1,10 @@
++<component name="libraryTable">
++  <library name="org.bouncycastle:bcprov-jdk16:1.46" type="repository">
++    <properties maven-id="org.bouncycastle:bcprov-jdk16:1.46" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk16/1.46/bcprov-jdk16-1.46.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/org_bouncycastle_bctsp_jdk16_1_46.xml
+===================================================================
+--- .idea/libraries/org_bouncycastle_bctsp_jdk16_1_46.xml	(revision 0)
++++ .idea/libraries/org_bouncycastle_bctsp_jdk16_1_46.xml	(working copy)
+@@ -0,0 +1,12 @@
++<component name="libraryTable">
++  <library name="org.bouncycastle:bctsp-jdk16:1.46" type="repository">
++    <properties maven-id="org.bouncycastle:bctsp-jdk16:1.46" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bctsp-jdk16/1.46/bctsp-jdk16-1.46.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk16/1.46/bcprov-jdk16-1.46.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcmail-jdk16/1.46/bcmail-jdk16-1.46.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/ru_crypto_JCP_2_0.xml
+===================================================================
+--- .idea/libraries/ru_crypto_JCP_2_0.xml	(revision 0)
++++ .idea/libraries/ru_crypto_JCP_2_0.xml	(working copy)
+@@ -0,0 +1,34 @@
++<component name="libraryTable">
++  <library name="ru.crypto:JCP:2.0" type="repository">
++    <properties maven-id="ru.crypto:JCP:2.0" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCP/2.0/JCP-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/ASN1P/2.0/ASN1P-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/objsys/asn1rt/5.74.0/asn1rt-5.74.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/intellij/forms_rt/6.0.5/forms_rt-6.0.5.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-commons/2.2.3/asm-commons-2.2.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/3.0/asm-tree-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.0/asm-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/jgoodies/forms/1.0.7/forms-1.0.7.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/jdom/jdom/1.0/jdom-1.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/google/android/android/2.2.1/android-2.2.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.3/commons-codec-1.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/khronos/opengl-api/gl1.1-android-2.1_r1/opengl-api-gl1.1-android-2.1_r1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/json/json/20080701/json-20080701.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCPInst/2.0/JCPInst-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8/junit-3.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.8/oro-2.0.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.9/log4j-1.2.9.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: .idea/libraries/ru_crypto_JCPRevTools_2_0.xml
+===================================================================
+--- .idea/libraries/ru_crypto_JCPRevTools_2_0.xml	(revision 0)
++++ .idea/libraries/ru_crypto_JCPRevTools_2_0.xml	(working copy)
+@@ -0,0 +1,35 @@
++<component name="libraryTable">
++  <library name="ru.crypto:JCPRevTools:2.0" type="repository">
++    <properties maven-id="ru.crypto:JCPRevTools:2.0" />
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCPRevTools/2.0/JCPRevTools-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCP/2.0/JCP-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/ASN1P/2.0/ASN1P-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/objsys/asn1rt/5.74.0/asn1rt-5.74.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/intellij/forms_rt/6.0.5/forms_rt-6.0.5.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-commons/2.2.3/asm-commons-2.2.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/3.0/asm-tree-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.0/asm-3.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/jgoodies/forms/1.0.7/forms-1.0.7.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/jdom/jdom/1.0/jdom-1.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/com/google/android/android/2.2.1/android-2.2.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.3/commons-codec-1.3.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/khronos/opengl-api/gl1.1-android-2.1_r1/opengl-api-gl1.1-android-2.1_r1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/xpp3/xpp3/1.1.4c/xpp3-1.1.4c.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/json/json/20080701/json-20080701.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/ru/crypto/JCPInst/2.0/JCPInst-2.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8/junit-3.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/cobertura/cobertura/1.9.4.1/cobertura-1.9.4.1.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/oro/oro/2.0.8/oro-2.0.8.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.9/log4j-1.2.9.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.7.0/ant-1.7.0.jar!/" />
++      <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant-launcher/1.7.0/ant-launcher-1.7.0.jar!/" />
++    </CLASSES>
++    <JAVADOC />
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: pom.xml
+===================================================================
+--- pom.xml	(revision 6465)
++++ pom.xml	(working copy)
+@@ -11,7 +11,7 @@
+ 	<artifactId>itextpdf</artifactId>
+ 	<packaging>jar</packaging>
+ 	<name>iText, a Free Java-PDF library</name>
+-	<version>5.1.3</version>
++	<version>5.1.3.patched</version>
+ 	<description>iText, a free Java-PDF library</description>
+ 	<!-- General Info -->
+ 	<url>http://www.itextpdf.com/</url>
+@@ -74,11 +74,12 @@
+ 			<url>http://www.fsf.org/licensing/licenses/agpl-3.0.html</url>
+ 		</license>
+ 	</licenses>
++    <!--
+ 	<scm>
+ 		<connection>scm:svn:http://itext.svn.sourceforge.net/svnroot/itext/trunk/itext</connection>
+ 		<url>http://itext.svn.sourceforge.net/viewvc/itext</url>
+ 	</scm>
+-
++    -->
+ 	<!-- Build -->
+ 	<build>
+ 		<resources>
+@@ -135,7 +136,8 @@
+ 	</build>
+ 	<!-- Dependencies -->
+ 	<dependencies>
+-		<dependency>
++            <!--
++            <dependency>
+ 			<groupId>org.bouncycastle</groupId>
+ 			<artifactId>bctsp-jdk15</artifactId>
+ 			<version>1.46</version>
+@@ -143,6 +145,47 @@
+ 			<scope>compile</scope>
+ 			<optional>true</optional>
+ 		</dependency>
++		-->
++        <dependency>
++            <groupId>org.bouncycastle</groupId>
++            <artifactId>bcprov-jdk16</artifactId>
++            <version>1.46</version>
++            <type>jar</type>
++            <scope>compile</scope>
++            <optional>true</optional>
++        </dependency>
++        <dependency>
++            <groupId>org.bouncycastle</groupId>
++            <artifactId>bcmail-jdk16</artifactId>
++            <version>1.46</version>
++            <type>jar</type>
++            <scope>compile</scope>
++            <optional>true</optional>
++        </dependency>
++        <dependency>
++            <groupId>org.bouncycastle</groupId>
++            <artifactId>bctsp-jdk16</artifactId>
++            <version>1.46</version>
++            <type>jar</type>
++            <scope>compile</scope>
++            <optional>true</optional>
++        </dependency>
++        <dependency>
++            <groupId>ru.crypto</groupId>
++            <artifactId>JCP</artifactId>
++            <version>2.0</version>
++            <type>jar</type>
++            <scope>compile</scope>
++            <optional>true</optional>
++        </dependency>
++        <dependency>
++            <groupId>ru.crypto</groupId>
++            <artifactId>JCPRevTools</artifactId>
++            <version>2.0</version>
++            <type>jar</type>
++            <scope>compile</scope>
++            <optional>true</optional>
++        </dependency>
+ 		<dependency>
+ 			<groupId>junit</groupId>
+ 			<artifactId>junit</artifactId>
+Index: src/main/java/com/itextpdf/text/pdf/PdfName.java
+===================================================================
+--- src/main/java/com/itextpdf/text/pdf/PdfName.java	(revision 6465)
++++ src/main/java/com/itextpdf/text/pdf/PdfName.java	(working copy)
+@@ -111,7 +111,9 @@
+      * @since 2.1.6
+      */
+     public static final PdfName ACTUALTEXT = new PdfName("ActualText");
+-    /** A name */
++    /** A name.
++     * 01/22/12 Используется для подписи на алгоритмах ГОСТ Р 34.10-2001/2012.
++     */
+     public static final PdfName ADBE_PKCS7_DETACHED = new PdfName("adbe.pkcs7.detached");
+     /** A name */
+     public static final PdfName ADBE_PKCS7_S4 =new PdfName("adbe.pkcs7.s4");
+@@ -125,6 +127,9 @@
+     public static final PdfName ADOBE_PPKLITE = new PdfName("Adobe.PPKLite");
+     /** A name */
+     public static final PdfName ADOBE_PPKMS = new PdfName("Adobe.PPKMS");
++    /** A name. 
++    * 01/22/12 для ГОСТ Р 34.10-2001/2012, filter */
++    public static final PdfName ADOBE_CryptoProPDF = new PdfName("CryptoPro PDF"); 
+     /** A name */
+     public static final PdfName AESV2 = new PdfName("AESV2");
+     /** A name */
+Index: src/main/java/com/itextpdf/text/pdf/PdfPKCS7.java
+===================================================================
+--- src/main/java/com/itextpdf/text/pdf/PdfPKCS7.java	(revision 6465)
++++ src/main/java/com/itextpdf/text/pdf/PdfPKCS7.java	(working copy)
+@@ -55,6 +55,7 @@
+ import java.security.NoSuchAlgorithmException;
+ import java.security.NoSuchProviderException;
+ import java.security.PrivateKey;
++import java.security.PublicKey;
+ import java.security.Signature;
+ import java.security.SignatureException;
+ import java.security.cert.CRL;
+@@ -119,8 +120,11 @@
+ import org.bouncycastle.asn1.x509.GeneralName;
+ import org.bouncycastle.asn1.x509.GeneralNames;
+ import org.bouncycastle.jce.provider.CertPathValidatorUtilities;
+-import org.bouncycastle.jce.provider.RFC3280CertPathUtilities;
++//import org.bouncycastle.jce.provider.RFC3280CertPathUtilities;
+ 
++import ru.CryptoPro.JCP.JCP;
++import ru.CryptoPro.reprov.x509.X509CertImpl;
++
+ /**
+  * This class does all the processing related to signing and verifying a PKCS#7
+  * signature.
+@@ -154,6 +158,14 @@
+     private static final String ID_PKCS7_SIGNED_DATA = "1.2.840.113549.1.7.2";
+     private static final String ID_RSA = "1.2.840.113549.1.1.1";
+     private static final String ID_DSA = "1.2.840.10040.4.1";
++    
++    private static final String ID_GOST3410EL = ru.CryptoPro.JCP.params.Consts.OID_19;   // 01/22/12 идентификатор набора параметров ГОСТ Р 34.10-2001
++    private static final String ID_GOST3410DHEL = ru.CryptoPro.JCP.params.Consts.OID_98; // 01/22/12 идентификатор набора параметров ГОСТ Р 34.10-2001
++    private static final String ID_GOST3410EL_2012_256 = ru.CryptoPro.JCP.params.Consts.OID_PARAMS_SIG_2012_256;   // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (256)
++    private static final String ID_GOST3410DHEL_2012_256 = ru.CryptoPro.JCP.params.Consts.OID_PARAMS_EXC_2012_256; // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (256) DH
++    private static final String ID_GOST3410EL_2012_512 = ru.CryptoPro.JCP.params.Consts.OID_PARAMS_SIG_2012_512;   // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (512)
++    private static final String ID_GOST3410DHEL_2012_512 = ru.CryptoPro.JCP.params.Consts.OID_PARAMS_EXC_2012_512; // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (512) DH
++    
+     private static final String ID_CONTENT_TYPE = "1.2.840.113549.1.9.3";
+     private static final String ID_MESSAGE_DIGEST = "1.2.840.113549.1.9.4";
+     private static final String ID_SIGNING_TIME = "1.2.840.113549.1.9.5";
+@@ -212,6 +224,10 @@
+         digestNames.put("1.3.36.3.3.1.3", "RIPEMD128");
+         digestNames.put("1.3.36.3.3.1.2", "RIPEMD160");
+         digestNames.put("1.3.36.3.3.1.4", "RIPEMD256");
++        
++        digestNames.put(JCP.GOST_DIGEST_OID, JCP.GOST_DIGEST_NAME); 				  // 01/22/12 алгоритм хеширования ГОСТ Р 34.11-94
++        digestNames.put(JCP.GOST_DIGEST_2012_256_OID, JCP.GOST_DIGEST_2012_256_NAME); // 10/07/14 алгоритм хеширования ГОСТ Р 34.11-2012 (256)
++        digestNames.put(JCP.GOST_DIGEST_2012_512_OID, JCP.GOST_DIGEST_2012_512_NAME); // 10/07/14 алгоритм хеширования ГОСТ Р 34.11-2012 (512)
+ 
+         algorithmNames.put("1.2.840.113549.1.1.1", "RSA");
+         algorithmNames.put("1.2.840.10040.4.1", "DSA");
+@@ -228,7 +244,14 @@
+         algorithmNames.put("1.3.36.3.3.1.3", "RSA");
+         algorithmNames.put("1.3.36.3.3.1.2", "RSA");
+         algorithmNames.put("1.3.36.3.3.1.4", "RSA");
+-
++        
++        algorithmNames.put(ID_GOST3410EL, JCP.GOST_EL_DEGREE_NAME); 			 // 01/22/12 идентификатор набора параметров ГОСТ Р 34.10-2001
++        algorithmNames.put(ID_GOST3410DHEL, JCP.GOST_EL_DH_NAME); 				 // 01/22/12 идентификатор набора параметров ГОСТ Р 34.10-2001 DH
++        algorithmNames.put(ID_GOST3410EL_2012_256, JCP.GOST_EL_2012_256_NAME);   // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (256)
++        algorithmNames.put(ID_GOST3410DHEL_2012_256, JCP.GOST_DH_2012_256_NAME); // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (256) DH
++        algorithmNames.put(ID_GOST3410EL_2012_512, JCP.GOST_EL_2012_512_NAME);   // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (512)
++        algorithmNames.put(ID_GOST3410DHEL_2012_512, JCP.GOST_DH_2012_512_NAME); // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (512) DH
++        
+         allowedDigests.put("MD5", "1.2.840.113549.2.5");
+         allowedDigests.put("MD2", "1.2.840.113549.2.2");
+         allowedDigests.put("SHA1", "1.3.14.3.2.26");
+@@ -249,6 +272,10 @@
+         allowedDigests.put("RIPEMD-160", "1.3.36.3.2.1");
+         allowedDigests.put("RIPEMD256", "1.3.36.3.2.3");
+         allowedDigests.put("RIPEMD-256", "1.3.36.3.2.3");
++        
++        allowedDigests.put(JCP.GOST_DIGEST_NAME, JCP.GOST_DIGEST_OID); 					 // 01/22/12 алгоритм хеширования ГОСТ Р 34.11-94
++        allowedDigests.put(JCP.GOST_DIGEST_2012_256_NAME, JCP.GOST_DIGEST_2012_256_OID); // 10/07/14 алгоритм хеширования ГОСТ Р 34.11-2012 (256)
++        allowedDigests.put(JCP.GOST_DIGEST_2012_512_NAME, JCP.GOST_DIGEST_2012_512_OID); // 10/07/14 алгоритм хеширования ГОСТ Р 34.11-2012 (512)
+     }
+ 
+     /**
+@@ -325,7 +352,7 @@
+             digest = ((DEROctetString)in.readObject()).getOctets();
+             if (provider == null)
+                 sig = Signature.getInstance("SHA1withRSA");
+-            else
++            else	
+                 sig = Signature.getInstance("SHA1withRSA", provider);
+             sig.initVerify(signCert.getPublicKey());
+         }
+@@ -450,7 +477,7 @@
+             X509CertParser cr = new X509CertParser();
+             cr.engineInit(new ByteArrayInputStream(contentsKey));
+             certs = cr.engineReadAll();
+-
++            
+             // the possible ID_PKCS7_DATA
+             ASN1Sequence rsaData = (ASN1Sequence)content.getObjectAt(2);
+             if (rsaData.size() > 1) {
+@@ -550,7 +577,27 @@
+                 sig = Signature.getInstance(getDigestAlgorithm());
+             else
+                 sig = Signature.getInstance(getDigestAlgorithm(), provider);
+-            sig.initVerify(signCert.getPublicKey());
++            
++            PublicKey pk = null;
++            
++            // 10/07/14 Если провайдер JCP или Java CSP, полагаем, что имеем дело с ГОСТ.
++            if ( (provider != null && (provider.equalsIgnoreCase(JCP.PROVIDER_NAME) || provider.equalsIgnoreCase("JCSP"))) ||
++            	 (getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_NAME)     || 
++                  getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_OID)           ||
++                  getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_2012_256_NAME) ||
++                  getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_2012_256_OID)  ||
++                  getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_2012_512_NAME) ||
++                  getHashAlgorithm().equalsIgnoreCase(JCP.GOST_DIGEST_2012_512_OID))	
++               ) {
++            	X509Certificate tmpCert = new X509CertImpl(signCert.getEncoded());
++            	pk = tmpCert.getPublicKey();
++            }
++            else {
++            	pk = signCert.getPublicKey();
++            }
++            
++            sig.initVerify(pk);
++            
+         }
+         catch (Exception e) {
+             throw new ExceptionConverter(e);
+@@ -590,11 +637,12 @@
+         //
+         // Copy in the certificates and crls used to sign the private key.
+         //
+-        signCert = (X509Certificate)certChain[0];
+-        for (Certificate element : certChain) {
+-            certs.add(element);
+-        }
+-
++        
++        signCert = (X509Certificate) certChain[0];
++		for (Certificate element : certChain) {
++			certs.add(element);
++	    }
++		
+         if (crlList != null) {
+             for (CRL element : crlList) {
+                 crls.add(element);
+@@ -612,6 +660,30 @@
+             else if (digestEncryptionAlgorithm.equals("DSA")) {
+                 digestEncryptionAlgorithm = ID_DSA;
+             }
++            // 01/22/12 идентификатор набора параметров ГОСТ Р 34.10-2001
++            else if (digestEncryptionAlgorithm.equals(JCP.GOST_EL_DEGREE_NAME)) {
++            	digestEncryptionAlgorithm = ID_GOST3410EL;
++            } 
++            // 01/22/12 идентификатор набора параметров ГОСТ Р 34.10-2001 DH
++            else  if (digestEncryptionAlgorithm.equals(JCP.GOST_EL_DH_NAME)) {
++            	digestEncryptionAlgorithm = ID_GOST3410DHEL;
++            }
++            // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (256)
++            else if (digestEncryptionAlgorithm.equals(JCP.GOST_EL_2012_256_NAME)) {
++            	digestEncryptionAlgorithm = ID_GOST3410EL_2012_256;
++            } 
++            // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (256) DH
++            else if (digestEncryptionAlgorithm.equals(JCP.GOST_DH_2012_256_NAME)) {
++            	digestEncryptionAlgorithm = ID_GOST3410DHEL_2012_256;
++            } 
++            // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (512)
++            else if (digestEncryptionAlgorithm.equals(JCP.GOST_EL_2012_512_NAME)) {
++            	digestEncryptionAlgorithm = ID_GOST3410EL_2012_512;
++            } 
++            // 10/07/14 идентификатор набора параметров ГОСТ Р 34.10-2012 (512) DH
++            else if (digestEncryptionAlgorithm.equals(JCP.GOST_DH_2012_512_NAME)) {
++            	digestEncryptionAlgorithm = ID_GOST3410DHEL_2012_512;
++            } 
+             else {
+                 throw new NoSuchAlgorithmException(MessageLocalization.getComposedMessage("unknown.key.algorithm.1", digestEncryptionAlgorithm));
+             }
+@@ -747,7 +819,9 @@
+                 }
+             }
+         }
+-        signCerts = cc;
++        
++       signCerts = cc;
++        
+     }
+ 
+     /**
+@@ -908,13 +982,25 @@
+                         X509Certificate certStoreX509 = (X509Certificate)keystore.getCertificate(alias);
+                         if (verifyCertificate(certStoreX509, crls, calendar) != null)
+                             continue;
++                        
+                         try {
+                             cert.verify(certStoreX509.getPublicKey());
+                             return null;
+                         }
+                         catch (Exception e) {
+-                            continue;
++                        	
++                        	// 10/07/14 Возможно, мы имеем дело с ГОСТ сертификатом
++ 
++                        	try {
++                        		X509Certificate tmpCert = new X509CertImpl(certStoreX509.getEncoded());
++                        		cert.verify(tmpCert.getPublicKey());
++                        	}
++                        	catch (Exception ee) {
++                        		continue;
++                        	}
++                        	
+                         }
++                        
+                     }
+                     catch (Exception ex) {
+                     }
+@@ -927,12 +1013,25 @@
+                 if (j == k)
+                     continue;
+                 X509Certificate certNext = (X509Certificate)certs[j];
++                
+                 try {
+                     cert.verify(certNext.getPublicKey());
+                     break;
+                 }
+                 catch (Exception e) {
++
++                    // 10/07/14 Возможно, мы имеем дело с ГОСТ сертификатом
++
++                	try {
++                		X509Certificate tmpCert = new X509CertImpl(certNext.getEncoded());
++                		cert.verify(tmpCert.getPublicKey());
++                	}
++                	catch (Exception ee) {
++                		continue;
++                	}
++                	
+                 }
++                
+             }
+             if (j == certs.length)
+                 return new Object[]{cert, "Cannot be verified against the KeyStore or the certificate chain"};
+Index: src/main/java/com/itextpdf/text/pdf/PdfSigGenericPKCS.java
+===================================================================
+--- src/main/java/com/itextpdf/text/pdf/PdfSigGenericPKCS.java	(revision 6465)
++++ src/main/java/com/itextpdf/text/pdf/PdfSigGenericPKCS.java	(working copy)
+@@ -48,6 +48,8 @@
+ import java.security.cert.CRL;
+ import java.security.cert.Certificate;
+ 
++import ru.CryptoPro.JCP.JCP;
++
+ import com.itextpdf.text.ExceptionConverter;
+ 
+ /**
+@@ -234,4 +236,76 @@
+             this.provider = provider;
+         }
+     }
++    
++    /** 
++     * 01/22/12
++    * Creates a standard filter of the type CryptoPro PDF 
++    * (алгоритм хеширования ГОСТ Р 34.11-94).
++    */    
++    public static class PPCryptoProPDF_3411 extends PdfSigGenericPKCS {
++    	/**
++    	 * The constructor for the default provider.
++    	 */        
++    	public PPCryptoProPDF_3411() {
++    		super(PdfName.ADOBE_CryptoProPDF, PdfName.ADBE_PKCS7_DETACHED);
++    		hashAlgorithm = JCP.GOST_DIGEST_NAME;
++    	}
++
++    	/**
++    	* The constructor for an explicit provider.
++    	* @param provider the crypto provider
++    	*/        
++    	public PPCryptoProPDF_3411(String provider) {
++    		this();
++    		this.provider = provider;
++    	}
++    } 
++    
++    /** 
++     * 10/07/14
++    * Creates a standard filter of the type CryptoPro PDF 
++    * (алгоритм хеширования ГОСТ Р 34.11-2012 (256)).
++    */    
++    public static class PPCryptoProPDF_3411_2012_256 extends PdfSigGenericPKCS {
++    	/**
++    	 * The constructor for the default provider.
++    	 */        
++    	public PPCryptoProPDF_3411_2012_256() {
++    		super(PdfName.ADOBE_CryptoProPDF, PdfName.ADBE_PKCS7_DETACHED);
++    		hashAlgorithm = JCP.GOST_DIGEST_2012_256_NAME;
++    	}
++
++    	/**
++    	* The constructor for an explicit provider.
++    	* @param provider the crypto provider
++    	*/        
++    	public PPCryptoProPDF_3411_2012_256(String provider) {
++    		this();
++    		this.provider = provider;
++    	}
++    }
++    
++    /** 
++     * 10/07/14
++    * Creates a standard filter of the type CryptoPro PDF 
++    * (алгоритм хеширования ГОСТ Р 34.11-2012 (256)).
++    */    
++    public static class PPCryptoProPDF_3411_2012_512 extends PdfSigGenericPKCS {
++    	/**
++    	 * The constructor for the default provider.
++    	 */        
++    	public PPCryptoProPDF_3411_2012_512() {
++    		super(PdfName.ADOBE_CryptoProPDF, PdfName.ADBE_PKCS7_DETACHED);
++    		hashAlgorithm = JCP.GOST_DIGEST_2012_512_NAME;
++    	}
++
++    	/**
++    	* The constructor for an explicit provider.
++    	* @param provider the crypto provider
++    	*/        
++    	public PPCryptoProPDF_3411_2012_512(String provider) {
++    		this();
++    		this.provider = provider;
++    	}
++    }
+ }
+Index: src/main/java/com/itextpdf/text/pdf/PdfSignatureAppearance.java
+===================================================================
+--- src/main/java/com/itextpdf/text/pdf/PdfSignatureAppearance.java	(revision 6465)
++++ src/main/java/com/itextpdf/text/pdf/PdfSignatureAppearance.java	(working copy)
+@@ -60,6 +60,8 @@
+ import java.util.HashMap;
+ import java.util.Map;
+ 
++import ru.CryptoPro.JCP.JCP;
++
+ import com.itextpdf.text.Chunk;
+ import com.itextpdf.text.DocumentException;
+ import com.itextpdf.text.Element;
+@@ -111,6 +113,11 @@
+      * The Windows Certificate Security.
+      */
+     public static final PdfName WINCER_SIGNED = PdfName.ADOBE_PPKMS;
++    
++    /**
++    * 01/22/12 Фильтр для подписи на алгоритмах ГОСТ Р 34.10-94/2012.
++    */
++    public static final PdfName CRYPTOPRO_SIGNED = PdfName.ADOBE_CryptoProPDF;
+ 
+     public static final int NOT_CERTIFIED = 0;
+     public static final int CERTIFIED_NO_CHANGES_ALLOWED = 1;
+@@ -959,6 +966,28 @@
+                 sigStandard = new PdfSigGenericPKCS.PPKLite(getProvider());
+             else if (PdfName.ADOBE_PPKMS.equals(getFilter()))
+                 sigStandard = new PdfSigGenericPKCS.PPKMS(getProvider());
++            // 01/22/12 Фильтр для ГОСТ подписи
++            else if (PdfName.ADOBE_CryptoProPDF.equals(getFilter())) {
++            	
++            	PrivateKey pk = getPrivKey();
++            	String pkAlgName = pk.getAlgorithm();
++
++            	// 10/07/14 Алгоритм подписи 34.10-2012 (256)
++            	if (pkAlgName.equalsIgnoreCase(JCP.GOST_EL_2012_256_NAME) || 
++            		pkAlgName.equalsIgnoreCase(JCP.GOST_DH_2012_256_NAME)) {
++                	sigStandard = new PdfSigGenericPKCS.PPCryptoProPDF_3411_2012_256(getProvider());
++                }
++            	// 10/07/14 Алгоритм подписи 34.10-2012 (512)
++            	else if (pkAlgName.equalsIgnoreCase(JCP.GOST_EL_2012_512_NAME) || 
++            		pkAlgName.equalsIgnoreCase(JCP.GOST_DH_2012_512_NAME)) {
++                    sigStandard = new PdfSigGenericPKCS.PPCryptoProPDF_3411_2012_512(getProvider());
++                }
++            	// 01/22/12 Алгоритм подписи 34.10-2001
++            	else {
++            		sigStandard = new PdfSigGenericPKCS.PPCryptoProPDF_3411(getProvider());
++            	}
++            	
++            }
+             else if (PdfName.VERISIGN_PPKVS.equals(getFilter()))
+                 sigStandard = new PdfSigGenericPKCS.VeriSign(getProvider());
+             else
+Index: src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF.java
+===================================================================
+--- src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF.java	(revision 0)
++++ src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF.java	(working copy)
+@@ -0,0 +1,266 @@
++/**
++ * Example shows how sign PDF file (GOST 34.10 algorithm) and verify signature and certificate.
++ */
++package com.itextpdf.text.pdf.cprocsp;
++
++import java.io.FileInputStream;
++import java.io.FileOutputStream;
++import java.io.IOException;
++import java.security.KeyStore;
++import java.security.KeyStoreException;
++import java.security.NoSuchAlgorithmException;
++import java.security.NoSuchProviderException;
++import java.security.PrivateKey;
++import java.security.SignatureException;
++import java.security.UnrecoverableKeyException;
++import java.security.cert.CRL;
++import java.security.cert.CRLException;
++import java.security.cert.Certificate;
++import java.security.cert.CertificateException;
++import java.security.cert.CertificateFactory;
++import java.security.cert.X509Certificate;
++import java.util.ArrayList;
++import java.util.Calendar;
++import java.util.List;
++
++import org.bouncycastle.tsp.TimeStampToken;
++
++import ru.CryptoPro.JCP.JCP;
++
++import com.itextpdf.text.DocumentException;
++import com.itextpdf.text.pdf.AcroFields;
++import com.itextpdf.text.pdf.PdfPKCS7;
++import com.itextpdf.text.pdf.PdfReader;
++import com.itextpdf.text.pdf.PdfSignatureAppearance;
++import com.itextpdf.text.pdf.PdfStamper;
++
++public class CryptoProPDF {
++
++	// Path to PDF files
++	final static String PREFIX_PDF_DIR = "C:\\PDF\\ex1\\";
++	// Path to certificate, CRL, CA, key store
++	final static String PREFIX_KEY_DIR = "C:\\PDF\\keys\\";
++	
++	// Aliases of keys in client store
++	final static String ALIAS_2001 = "gost_exch";
++    final static String ALIAS_2012_256 = "le-704999da-69b2-4c7f-ada7-49d6cad6c2c2";
++    final static String ALIAS_2012_512 = "le-90ea736e-cbfc-4940-b9e2-f3407c192f5b";
++
++	// Passwords to client store
++	final static char[] PASSWORD_2001 = "Pass1234".toCharArray();
++    final static char[] PASSWORD_2012_256 = "2".toCharArray();
++    final static char[] PASSWORD_2012_512 = "3".toCharArray();
++	
++	// Aliases of CA certificates in trusted store
++	final static String CA_ALIAS_2001 =  "root";
++    final static String CA_ALIAS_2012 =  "test_ca_root";
++
++	// Password to trusted store
++	final static char[] CA_PASSWORD = "Pass1234".toCharArray();
++	// CA file
++	final static String CA_FILENAME =  "CATrustStore";
++	
++	// PDF file
++	final static String PDF_FILENAME = "example.pdf";
++	// CRL file
++	final static String CRL_FILENAME = null; // "certcrl.crl";
++		
++	/**
++	 * Loads key store.
++	 * @param storeFile - key store file.
++	 * @param password - password to store.
++	 * @return opened key store.
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws NoSuchAlgorithmException
++	 * @throws CertificateException
++	 * @throws IOException
++	 */
++	private static KeyStore loadKeyStore(String storeFile, char[] password)
++        throws KeyStoreException, NoSuchProviderException, NoSuchAlgorithmException,
++        CertificateException, IOException {
++		
++		KeyStore keyStore = KeyStore.getInstance(JCP.HD_STORE_NAME, JCP.PROVIDER_NAME);
++		keyStore.load( (storeFile == null) ? null : new FileInputStream(storeFile), password);
++		
++		return keyStore;
++	}
++	
++	/**
++	 * Signs PDF file (CryptoPro PDF / PKCS7 DETACHED) and saves it.
++	 * @param fileToSign - source PDF file.
++	 * @param signedFile - signed PDF file.
++	 * @param signStore - store containing key to sign file.
++	 * @param trustedStore - store containing trusted CA certificate.
++     * @param alias - key alias to sign pdf.
++     * @param password - key password.
++     * @param caAlias - alias of CA certificate.
++	 * @throws IOException
++	 * @throws DocumentException
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws NoSuchAlgorithmException
++	 * @throws CertificateException
++	 * @throws UnrecoverableKeyException
++	 */
++	public static void signPDF(String fileToSign, String signedFile, KeyStore signStore,
++        KeyStore trustedStore, String alias, char[] password, String caAlias) throws IOException,
++        DocumentException, KeyStoreException, NoSuchProviderException, NoSuchAlgorithmException,
++        CertificateException, UnrecoverableKeyException {
++		
++		// Get key and certificates
++		PrivateKey key = (PrivateKey)signStore.getKey(alias, password);
++		
++		int chainLength = (trustedStore == null) ? 1 : 2;
++		
++		Certificate[] chain = new Certificate[chainLength];
++		chain[0] = signStore.getCertificate(alias);
++		
++		if (trustedStore != null) {
++			chain[1] = trustedStore.getCertificate(caAlias);
++		}
++		
++		// Load PDF
++		PdfReader reader = new PdfReader(fileToSign);
++		FileOutputStream fout = new FileOutputStream(signedFile);
++		PdfStamper stp = PdfStamper.createSignature(reader, fout, '\0');
++		
++		// Sign document
++		PdfSignatureAppearance sap = stp.getSignatureAppearance();
++		sap.setProvider(JCP.PROVIDER_NAME);
++		sap.setCrypto(key, chain, null, PdfSignatureAppearance.CRYPTOPRO_SIGNED);
++		sap.setReason("I'm the signer");
++		sap.setLocation("CryptoPro");
++		stp.close();
++
++	}
++	
++	/**
++	 * Verifies PKCS7 (CryptoPro PDF / PKCS7 DETACHED) of signed PDF file.
++	 * @param fileToVerify - source PDF file to be verified.
++	 * @param trustedStore - store containing trusted CA certificate to verify client certificate.
++	 * @param crl - CRL file to verify certificate chain.
++	 * @return true if signature is valid otherwise throws exception.
++	 * @throws IOException
++	 * @throws SignatureException
++	 * @throws NoSuchAlgorithmException
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws CertificateException
++	 * @throws CRLException
++	 */
++	public static boolean verifyPDF(String fileToVerify, KeyStore trustedStore, CRL crl)
++        throws IOException, SignatureException, NoSuchAlgorithmException,
++	    KeyStoreException, NoSuchProviderException, CertificateException, CRLException {
++		
++		// CRL collection
++		List<CRL> crls = null;
++		
++		if (crl != null) {
++			crls = new ArrayList<CRL>(1);
++			crls.add(crl);
++		}
++		
++		boolean result = false;
++		
++		// Load document
++		PdfReader checker = new PdfReader(fileToVerify);
++		AcroFields af = checker.getAcroFields();
++		
++		// Get signatures
++		ArrayList<String> names = af.getSignatureNames();
++	
++		for (int k = 0; k < names.size(); ++k) {
++		    
++			String name = names.get(k);
++			
++			System.out.println("Signature: " + name);
++			
++			// Get one signature and verify it
++		    PdfPKCS7 pk = af.verifySignature(name, JCP.PROVIDER_NAME);
++		    result = pk.verify();
++		    
++		    // Signer certificate
++		    System.out.println("Signer certificate DN: " + pk.getSigningCertificate().getSubjectDN());
++
++		    // Get time stamp and chain
++		    Calendar cal = pk.getSignDate();
++		    X509Certificate pkc[] = (X509Certificate[])pk.getSignCertificateChain();
++		    
++		    TimeStampToken ts = pk.getTimeStampToken();
++		    if (ts != null) {
++		        boolean impr = pk.verifyTimestampImprint();
++		        System.out.println("Timestamp imprint verifies: " + impr);
++		        cal = pk.getTimeStampDate();
++		        System.out.println("Timestamp date: " + cal);
++		    }
++		    
++		    System.out.println("Subject: " + PdfPKCS7.getSubjectFields(pk.getSigningCertificate()));
++		    System.out.println("Document modified: " + !result);
++		    
++		    // Check certificate chain
++		    Object fails[] = PdfPKCS7.verifyCertificates(pkc, trustedStore, crls, cal);
++		    if (fails == null)
++		        System.out.println("Certificates verified against the KeyStore");
++		    else
++		        System.out.println("Certificate failed: " + fails[1]);
++		}
++		
++		return result;
++	}
++
++	/**
++	 * @throws NoSuchProviderException 
++	 * @throws KeyStoreException 
++	 * @throws IOException 
++	 * @throws CertificateException 
++	 * @throws NoSuchAlgorithmException 
++	 * @throws UnrecoverableKeyException 
++	 * @throws DocumentException 
++	 * @throws SignatureException 
++	 * @throws CRLException 
++	 */
++	public static void main_(String crlFileName, String caFileName, String caAlias, char[] caPassword,
++        String keyAlias, char[] keyPassword, String outPostfix) throws KeyStoreException, NoSuchProviderException,
++        NoSuchAlgorithmException, CertificateException, IOException, UnrecoverableKeyException,
++        DocumentException, SignatureException, CRLException {
++
++		// CRL
++		CRL crl = null;
++		// Trusted store (CA) to build chain
++		KeyStore trustedStore = null;
++		
++		if (CRL_FILENAME != null) {
++			crl = CertificateFactory.getInstance("X.509").generateCRL(new FileInputStream(PREFIX_KEY_DIR + CRL_FILENAME));
++		}
++		
++		// Key store containing trusted certificate to build chain
++		if (CA_FILENAME != null) {
++			trustedStore = loadKeyStore(PREFIX_KEY_DIR + CA_FILENAME, CA_PASSWORD);
++		}
++		
++		// Key store containing client key to sign document
++		final KeyStore clientStore = loadKeyStore(null, keyPassword);
++		
++		// 1) Sign PDF
++		signPDF(PREFIX_PDF_DIR + PDF_FILENAME, PREFIX_PDF_DIR + "signed_" +
++            outPostfix + PDF_FILENAME, clientStore, trustedStore, keyAlias,
++                keyPassword, caAlias);
++		
++		// 2) Verify signature
++		// System.out.println( "Verified: " + verifyPDF(PREFIX_PDF_DIR +
++		// "signed_" + PDF_FILENAME, trustedStore, crl ) );
++		
++		// /*"c:\\Support\\malanina\\Reader-1.pdf"*/
++		System.out.println( "Verified: " + verifyPDF(PREFIX_PDF_DIR + "signed_" +
++            outPostfix + PDF_FILENAME, trustedStore, null) );
++	}
++
++    public static void main(String[] args) throws Exception {
++        main_(CRL_FILENAME, CA_FILENAME, CA_ALIAS_2001, CA_PASSWORD, ALIAS_2001, PASSWORD_2001, "2001_");
++        main_(CRL_FILENAME, CA_FILENAME, CA_ALIAS_2012, CA_PASSWORD, ALIAS_2012_256, PASSWORD_2012_256, "2001_256_");
++        main_(CRL_FILENAME, CA_FILENAME, CA_ALIAS_2012, CA_PASSWORD, ALIAS_2012_512, PASSWORD_2012_512, "2012_512_");
++    }
++
++
++}
+Index: src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF_0.java
+===================================================================
+--- src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF_0.java	(revision 0)
++++ src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF_0.java	(working copy)
+@@ -0,0 +1,346 @@
++/**
++ * Example shows how sign PDF file (GOST 34.10 algorithm) and verify signature and certificate.
++ */
++package com.itextpdf.text.pdf.cprocsp;
++
++import java.io.ByteArrayInputStream;
++import java.io.FileInputStream;
++import java.io.FileOutputStream;
++import java.io.IOException;
++import java.io.InputStream;
++import java.security.KeyStore;
++import java.security.KeyStoreException;
++import java.security.MessageDigest;
++import java.security.NoSuchAlgorithmException;
++import java.security.NoSuchProviderException;
++import java.security.PrivateKey;
++import java.security.SignatureException;
++import java.security.UnrecoverableKeyException;
++import java.security.cert.CRL;
++import java.security.cert.CRLException;
++import java.security.cert.Certificate;
++import java.security.cert.CertificateException;
++import java.security.cert.CertificateFactory;
++import java.security.cert.X509Certificate;
++import java.util.ArrayList;
++import java.util.Calendar;
++import java.util.HashMap;
++import java.util.List;
++
++import org.bouncycastle.asn1.ASN1InputStream;
++import org.bouncycastle.asn1.DERObject;
++import org.bouncycastle.tsp.TimeStampToken;
++
++import ru.CryptoPro.JCP.tools.Array;
++
++import com.itextpdf.text.DocumentException;
++import com.itextpdf.text.pdf.AcroFields;
++import com.itextpdf.text.pdf.OcspClientBouncyCastle;
++import com.itextpdf.text.pdf.PdfDate;
++import com.itextpdf.text.pdf.PdfDictionary;
++import com.itextpdf.text.pdf.PdfName;
++import com.itextpdf.text.pdf.PdfPKCS7;
++import com.itextpdf.text.pdf.PdfReader;
++import com.itextpdf.text.pdf.PdfSignature;
++import com.itextpdf.text.pdf.PdfSignatureAppearance;
++import com.itextpdf.text.pdf.PdfStamper;
++import com.itextpdf.text.pdf.PdfString;
++import com.itextpdf.text.pdf.TSAClient;
++import com.itextpdf.text.pdf.TSAClientBouncyCastle;
++
++public class CryptoProPDF_0 {
++
++	// Path to PDF files
++	final static String PREFIX_PDF_DIR = "C:\\PDF\\cp\\used\\";
++	// Path to certificate, CRL, CA, key store
++	final static String PREFIX_KEY_DIR = "C:\\PDF\\keys\\";
++	
++	// Alias of key in client store
++	final static String ALIAS = "gost_exch";
++	// Password to client store
++	final static char[] PASSWORD = "Pass1234".toCharArray();
++	
++	// Alias of CA certificate in trusted store
++	final static String CA_ALIAS = "root";
++	// Password to trusted store
++	final static char[] CA_PASSWORD = PASSWORD;
++	// CA file
++	final static String CA_FILENAME =  "CATrustStore";
++	
++	// PDF file
++	final static String PDF_FILENAME = "example.pdf";
++	// CRL file
++	final static String CRL_FILENAME = "certcrl.crl";
++		
++	/**
++	 * Loads key store.
++	 * @param storeFile - key store file.
++	 * @param password - password to store.
++	 * @return opened key store.
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws NoSuchAlgorithmException
++	 * @throws CertificateException
++	 * @throws IOException
++	 */
++	private static KeyStore loadKeyStore(String storeFile, char[] password) throws KeyStoreException, NoSuchProviderException, 
++	NoSuchAlgorithmException, CertificateException, IOException {
++		
++		KeyStore keyStore = KeyStore.getInstance("HDImageStore","JCP");
++		keyStore.load( (storeFile == null) ? null : new FileInputStream(storeFile), password);
++		
++		return keyStore;
++	}
++	
++	/**
++	 * Signs PDF file (CryptoPro PDF / PKCS7 DETACHED) and saves it.
++	 * @param fileToSign - source PDF file.
++	 * @param signedFile - signed PDF file.
++	 * @param signStore - store containing key to sign file.
++	 * @param trustedStore - store containing trusted CA certificate.
++	 * @throws IOException
++	 * @throws DocumentException
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws NoSuchAlgorithmException
++	 * @throws CertificateException
++	 * @throws UnrecoverableKeyException
++	 */
++	public static void signPDF(String fileToSign, String signedFile, KeyStore signStore, KeyStore trustedStore) throws IOException, 
++	DocumentException, KeyStoreException, NoSuchProviderException, NoSuchAlgorithmException, CertificateException, 
++	UnrecoverableKeyException {
++		
++		// Get key and certificates
++		PrivateKey key = (PrivateKey)signStore.getKey(ALIAS, PASSWORD);
++		
++		int chainLength = (trustedStore == null) ? 1 : 2;
++		
++		Certificate[] chain = new Certificate[chainLength];
++		chain[0] = signStore.getCertificate(ALIAS);
++		
++		if (trustedStore != null) {
++			chain[1] = trustedStore.getCertificate(CA_ALIAS);
++		}
++		
++		// Load PDF
++		PdfReader reader = new PdfReader(fileToSign);
++		FileOutputStream fout = new FileOutputStream(signedFile);
++		PdfStamper stp = PdfStamper.createSignature(reader, fout, '\0');
++		
++		// Sign document
++		PdfSignatureAppearance sap = stp.getSignatureAppearance();
++		sap.setProvider("JCP");
++		sap.setCrypto(key, chain, null, PdfSignatureAppearance.CRYPTOPRO_SIGNED);
++		sap.setReason("I'm the signer");
++		sap.setLocation("CryptoPro");
++		stp.close();
++
++	}
++	
++	/*
++	public static void signPDFPlusTS(String fileToSign, String signedFile, KeyStore signStore, KeyStore trustedStore) 
++			throws Exception {
++		
++		// Get key and certificates
++		PrivateKey key = (PrivateKey)signStore.getKey(ALIAS, PASSWORD);
++		
++		int chainLength = (trustedStore == null) ? 1 : 2;
++		
++		Certificate[] chain = new Certificate[chainLength];
++		chain[0] = signStore.getCertificate(ALIAS);
++		
++		if (trustedStore != null) {
++			chain[1] = trustedStore.getCertificate(CA_ALIAS);
++		}
++		
++		TSAClient tsc = new TSAClientBouncyCastle("http://www.cryptopro.ru:80/tsp/", null, null);
++
++		// Load PDF
++		PdfReader reader = new PdfReader(fileToSign);
++		FileOutputStream fout = new FileOutputStream(signedFile);
++		PdfStamper stp = PdfStamper.createSignature(reader, fout, '\0');
++		
++		// Sign document
++		PdfSignatureAppearance sap = stp.getSignatureAppearance();
++		sap.setProvider("JCP");
++		sap.setCrypto(key, chain, null, PdfSignatureAppearance.CRYPTOPRO_SIGNED);
++		sap.setReason("I'm the signer");
++		sap.setLocation("CryptoPro");
++		
++		PdfSignature dic = new PdfSignature(PdfName.ADOBE_CryptoProPDF, new PdfName("adbe.pkcs7.detached"));
++		dic.setReason(sap.getReason());
++		dic.setLocation(sap.getLocation());
++		dic.setContact(sap.getContact());
++		dic.setDate(new PdfDate(sap.getSignDate()));
++		sap.setCryptoDictionary(dic);
++		
++		int contentEstimated = 15000;
++		HashMap exc = new HashMap();
++		exc.put(PdfName.CONTENTS, new Integer(contentEstimated * 2 + 2));
++		sap.preClose(exc);
++		
++		PdfPKCS7 sgn = new PdfPKCS7(key, chain, null, "GOST3411", null, false);
++		InputStream data = sap.getRangeStream();
++		
++		MessageDigest messageDigest = MessageDigest.getInstance("GOST3411");
++		byte buf[] = new byte[8192];
++		
++		int n;
++		while ((n = data.read(buf)) > 0) {
++		    messageDigest.update(buf, 0, n);
++		}
++		
++		byte hash[] = messageDigest.digest();
++		Calendar cal = Calendar.getInstance();
++		byte[] ocsp = null;
++		
++		if (chain.length >= 2) {
++		    String url = PdfPKCS7.getOCSPURL((X509Certificate)chain[0]);
++		    if (url != null && url.length() > 0)
++		        ocsp = new OcspClientBouncyCastle().getEncoded((X509Certificate)chain[0], (X509Certificate)chain[1], url);
++		}
++		
++		byte sh[] = sgn.getAuthenticatedAttributeBytes(hash, cal, ocsp);
++		sgn.update(sh, 0, sh.length);
++
++		byte[] encodedSig = sgn.getEncodedPKCS7(hash, cal, tsc, ocsp);
++
++		if (contentEstimated + 2 < encodedSig.length)
++		    throw new Exception("Not enough space");
++
++		byte[] paddedSig = new byte[contentEstimated];
++		System.arraycopy(encodedSig, 0, paddedSig, 0, encodedSig.length);
++
++		PdfDictionary dic2 = new PdfDictionary();
++		dic2.put(PdfName.CONTENTS, new PdfString(paddedSig).setHexWriting(true));
++		sap.close(dic2);
++		
++		//stp.close();
++
++	}
++	*/
++	
++	/**
++	 * Verifies PKCS7 (CryptoPro PDF / PKCS7 DETACHED) of signed PDF file.
++	 * @param fileToVerify - source PDF file to be verified.
++	 * @param trustedStore - store containing trusted CA certificate to verify client certificate.
++	 * @param crl - CRL file to verify certificate chain.
++	 * @return true if signature is valid otherwise throws exception.
++	 * @throws IOException
++	 * @throws SignatureException
++	 * @throws NoSuchAlgorithmException
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws CertificateException
++	 * @throws CRLException
++	 */
++	public static boolean verifyPDF(String fileToVerify, KeyStore trustedStore, CRL crl) throws IOException, SignatureException, NoSuchAlgorithmException, 
++	KeyStoreException, NoSuchProviderException, CertificateException, CRLException {
++		
++		// CRL collection
++		List<CRL> crls = null;
++		
++		if (crl != null) {
++			crls = new ArrayList<CRL>(1);
++			crls.add(crl);
++		}
++		
++		boolean result = false;
++		
++		// Load document
++		PdfReader checker = new PdfReader(fileToVerify);
++		AcroFields af = checker.getAcroFields();
++		
++		// Get signatures
++		ArrayList<String> names = af.getSignatureNames();
++	
++		for (int k = 0; k < names.size(); ++k) {
++		    
++			String name = (String)names.get(k);
++			
++			System.out.println("Signature: " + name);
++			
++			// Get one signature and verify it
++		    PdfPKCS7 pk = af.verifySignature(name, "JCP");
++		    result = pk.verify();
++		    /*
++		    PdfDictionary d = af.getSignatureDictionary(name);
++		    PdfString contents = d.getAsString(PdfName.CONTENTS);
++		    
++		    ASN1InputStream in = new ASN1InputStream(new ByteArrayInputStream(contents.getOriginalBytes()));
++		    DERObject pkcs = in.readObject();
++		    
++		    Array.writeFile(PREFIX_PDF_DIR + "pkcs7.cms", pkcs.getDEREncoded());
++		    
++		    return result;
++		    */
++		    
++		    // Signer certificate
++		    System.out.println("Signer certificate DN: " + pk.getSigningCertificate().getSubjectDN());
++
++		    // Get time stamp and chain
++		    Calendar cal = pk.getSignDate();
++		    X509Certificate pkc[] = (X509Certificate[])pk.getSignCertificateChain();
++		    
++		    TimeStampToken ts = pk.getTimeStampToken();
++		    if (ts != null) {
++		        boolean impr = pk.verifyTimestampImprint();
++		        System.out.println("Timestamp imprint verifies: " + impr);
++		        cal = pk.getTimeStampDate();
++		        System.out.println("Timestamp date: " + cal);
++		    }
++		    
++		    System.out.println("Subject: " + PdfPKCS7.getSubjectFields(pk.getSigningCertificate()));
++		    System.out.println("Document modified: " + !result);
++		    
++		    // Check certificate chain
++		    Object fails[] = PdfPKCS7.verifyCertificates(pkc, trustedStore, crls, cal);
++		    if (fails == null)
++		        System.out.println("Certificates verified against the KeyStore");
++		    else
++		        System.out.println("Certificate failed: " + fails[1]);
++		    
++		}
++		
++		return result;
++	}
++	
++	/**
++	 * @param args
++	 * @throws Exception 
++	 */
++	public static void main(String[] args) throws Exception {
++
++		/*
++		// CRL
++		CRL crl = null;
++		*/
++		
++		// Trusted store (CA) to build chain
++		KeyStore trustedStore = null;
++		/*
++		if (CRL_FILENAME != null) {
++			crl = CertificateFactory.getInstance("X.509").generateCRL(new FileInputStream(PREFIX_KEY_DIR + CRL_FILENAME));
++		}
++		*/
++		
++		// Key store containing trusted certificate to build chain
++		if (CA_FILENAME != null) {
++			trustedStore = loadKeyStore(PREFIX_KEY_DIR + CA_FILENAME, CA_PASSWORD);
++		}
++		/*
++		// Key store containing client key to sign document
++		final KeyStore clientStore = loadKeyStore(null, PASSWORD);
++		
++		// 1) Sign PDF
++		signPDF(PREFIX_PDF_DIR + PDF_FILENAME, 
++				PREFIX_PDF_DIR + "signed_" + PDF_FILENAME, clientStore, trustedStore );
++		
++		// 2) Verify signature
++		System.out.println( "Verified: " + verifyPDF(PREFIX_PDF_DIR + "signed_" + PDF_FILENAME, trustedStore, null ) );
++		*/
++		
++		System.out.println( "Verified: " + verifyPDF("c:\\Support\\malanina\\Reader-1.pdf", null, null ) );
++		
++	}
++}
+Index: src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF.java
+===================================================================
+--- src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF.java	(revision 0)
++++ src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF.java	(working copy)
+@@ -0,0 +1,266 @@
++/**
++ * Example shows how sign PDF file (GOST 34.10 algorithm) and verify signature and certificate.
++ */
++package com.itextpdf.text.pdf.cprocsp;
++
++import java.io.FileInputStream;
++import java.io.FileOutputStream;
++import java.io.IOException;
++import java.security.KeyStore;
++import java.security.KeyStoreException;
++import java.security.NoSuchAlgorithmException;
++import java.security.NoSuchProviderException;
++import java.security.PrivateKey;
++import java.security.SignatureException;
++import java.security.UnrecoverableKeyException;
++import java.security.cert.CRL;
++import java.security.cert.CRLException;
++import java.security.cert.Certificate;
++import java.security.cert.CertificateException;
++import java.security.cert.CertificateFactory;
++import java.security.cert.X509Certificate;
++import java.util.ArrayList;
++import java.util.Calendar;
++import java.util.List;
++
++import org.bouncycastle.tsp.TimeStampToken;
++
++import ru.CryptoPro.JCP.JCP;
++
++import com.itextpdf.text.DocumentException;
++import com.itextpdf.text.pdf.AcroFields;
++import com.itextpdf.text.pdf.PdfPKCS7;
++import com.itextpdf.text.pdf.PdfReader;
++import com.itextpdf.text.pdf.PdfSignatureAppearance;
++import com.itextpdf.text.pdf.PdfStamper;
++
++public class CryptoProPDF {
++
++	// Path to PDF files
++	final static String PREFIX_PDF_DIR = "C:\\PDF\\ex1\\";
++	// Path to certificate, CRL, CA, key store
++	final static String PREFIX_KEY_DIR = "C:\\PDF\\keys\\";
++	
++	// Aliases of keys in client store
++	final static String ALIAS_2001 = "gost_exch";
++    final static String ALIAS_2012_256 = "le-704999da-69b2-4c7f-ada7-49d6cad6c2c2";
++    final static String ALIAS_2012_512 = "le-90ea736e-cbfc-4940-b9e2-f3407c192f5b";
++
++	// Passwords to client store
++	final static char[] PASSWORD_2001 = "Pass1234".toCharArray();
++    final static char[] PASSWORD_2012_256 = "2".toCharArray();
++    final static char[] PASSWORD_2012_512 = "3".toCharArray();
++	
++	// Aliases of CA certificates in trusted store
++	final static String CA_ALIAS_2001 =  "root";
++    final static String CA_ALIAS_2012 =  "test_ca_root";
++
++	// Password to trusted store
++	final static char[] CA_PASSWORD = "Pass1234".toCharArray();
++	// CA file
++	final static String CA_FILENAME =  "CATrustStore";
++	
++	// PDF file
++	final static String PDF_FILENAME = "example.pdf";
++	// CRL file
++	final static String CRL_FILENAME = null; // "certcrl.crl";
++		
++	/**
++	 * Loads key store.
++	 * @param storeFile - key store file.
++	 * @param password - password to store.
++	 * @return opened key store.
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws NoSuchAlgorithmException
++	 * @throws CertificateException
++	 * @throws IOException
++	 */
++	private static KeyStore loadKeyStore(String storeFile, char[] password)
++        throws KeyStoreException, NoSuchProviderException, NoSuchAlgorithmException,
++        CertificateException, IOException {
++		
++		KeyStore keyStore = KeyStore.getInstance(JCP.HD_STORE_NAME, JCP.PROVIDER_NAME);
++		keyStore.load( (storeFile == null) ? null : new FileInputStream(storeFile), password);
++		
++		return keyStore;
++	}
++	
++	/**
++	 * Signs PDF file (CryptoPro PDF / PKCS7 DETACHED) and saves it.
++	 * @param fileToSign - source PDF file.
++	 * @param signedFile - signed PDF file.
++	 * @param signStore - store containing key to sign file.
++	 * @param trustedStore - store containing trusted CA certificate.
++     * @param alias - key alias to sign pdf.
++     * @param password - key password.
++     * @param caAlias - alias of CA certificate.
++	 * @throws IOException
++	 * @throws DocumentException
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws NoSuchAlgorithmException
++	 * @throws CertificateException
++	 * @throws UnrecoverableKeyException
++	 */
++	public static void signPDF(String fileToSign, String signedFile, KeyStore signStore,
++        KeyStore trustedStore, String alias, char[] password, String caAlias) throws IOException,
++        DocumentException, KeyStoreException, NoSuchProviderException, NoSuchAlgorithmException,
++        CertificateException, UnrecoverableKeyException {
++		
++		// Get key and certificates
++		PrivateKey key = (PrivateKey)signStore.getKey(alias, password);
++		
++		int chainLength = (trustedStore == null) ? 1 : 2;
++		
++		Certificate[] chain = new Certificate[chainLength];
++		chain[0] = signStore.getCertificate(alias);
++		
++		if (trustedStore != null) {
++			chain[1] = trustedStore.getCertificate(caAlias);
++		}
++		
++		// Load PDF
++		PdfReader reader = new PdfReader(fileToSign);
++		FileOutputStream fout = new FileOutputStream(signedFile);
++		PdfStamper stp = PdfStamper.createSignature(reader, fout, '\0');
++		
++		// Sign document
++		PdfSignatureAppearance sap = stp.getSignatureAppearance();
++		sap.setProvider(JCP.PROVIDER_NAME);
++		sap.setCrypto(key, chain, null, PdfSignatureAppearance.CRYPTOPRO_SIGNED);
++		sap.setReason("I'm the signer");
++		sap.setLocation("CryptoPro");
++		stp.close();
++
++	}
++	
++	/**
++	 * Verifies PKCS7 (CryptoPro PDF / PKCS7 DETACHED) of signed PDF file.
++	 * @param fileToVerify - source PDF file to be verified.
++	 * @param trustedStore - store containing trusted CA certificate to verify client certificate.
++	 * @param crl - CRL file to verify certificate chain.
++	 * @return true if signature is valid otherwise throws exception.
++	 * @throws IOException
++	 * @throws SignatureException
++	 * @throws NoSuchAlgorithmException
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws CertificateException
++	 * @throws CRLException
++	 */
++	public static boolean verifyPDF(String fileToVerify, KeyStore trustedStore, CRL crl)
++        throws IOException, SignatureException, NoSuchAlgorithmException,
++	    KeyStoreException, NoSuchProviderException, CertificateException, CRLException {
++		
++		// CRL collection
++		List<CRL> crls = null;
++		
++		if (crl != null) {
++			crls = new ArrayList<CRL>(1);
++			crls.add(crl);
++		}
++		
++		boolean result = false;
++		
++		// Load document
++		PdfReader checker = new PdfReader(fileToVerify);
++		AcroFields af = checker.getAcroFields();
++		
++		// Get signatures
++		ArrayList<String> names = af.getSignatureNames();
++	
++		for (int k = 0; k < names.size(); ++k) {
++		    
++			String name = names.get(k);
++			
++			System.out.println("Signature: " + name);
++			
++			// Get one signature and verify it
++		    PdfPKCS7 pk = af.verifySignature(name, JCP.PROVIDER_NAME);
++		    result = pk.verify();
++		    
++		    // Signer certificate
++		    System.out.println("Signer certificate DN: " + pk.getSigningCertificate().getSubjectDN());
++
++		    // Get time stamp and chain
++		    Calendar cal = pk.getSignDate();
++		    X509Certificate pkc[] = (X509Certificate[])pk.getSignCertificateChain();
++		    
++		    TimeStampToken ts = pk.getTimeStampToken();
++		    if (ts != null) {
++		        boolean impr = pk.verifyTimestampImprint();
++		        System.out.println("Timestamp imprint verifies: " + impr);
++		        cal = pk.getTimeStampDate();
++		        System.out.println("Timestamp date: " + cal);
++		    }
++		    
++		    System.out.println("Subject: " + PdfPKCS7.getSubjectFields(pk.getSigningCertificate()));
++		    System.out.println("Document modified: " + !result);
++		    
++		    // Check certificate chain
++		    Object fails[] = PdfPKCS7.verifyCertificates(pkc, trustedStore, crls, cal);
++		    if (fails == null)
++		        System.out.println("Certificates verified against the KeyStore");
++		    else
++		        System.out.println("Certificate failed: " + fails[1]);
++		}
++		
++		return result;
++	}
++
++	/**
++	 * @throws NoSuchProviderException 
++	 * @throws KeyStoreException 
++	 * @throws IOException 
++	 * @throws CertificateException 
++	 * @throws NoSuchAlgorithmException 
++	 * @throws UnrecoverableKeyException 
++	 * @throws DocumentException 
++	 * @throws SignatureException 
++	 * @throws CRLException 
++	 */
++	public static void main_(String crlFileName, String caFileName, String caAlias, char[] caPassword,
++        String keyAlias, char[] keyPassword, String outPostfix) throws KeyStoreException, NoSuchProviderException,
++        NoSuchAlgorithmException, CertificateException, IOException, UnrecoverableKeyException,
++        DocumentException, SignatureException, CRLException {
++
++		// CRL
++		CRL crl = null;
++		// Trusted store (CA) to build chain
++		KeyStore trustedStore = null;
++		
++		if (CRL_FILENAME != null) {
++			crl = CertificateFactory.getInstance("X.509").generateCRL(new FileInputStream(PREFIX_KEY_DIR + CRL_FILENAME));
++		}
++		
++		// Key store containing trusted certificate to build chain
++		if (CA_FILENAME != null) {
++			trustedStore = loadKeyStore(PREFIX_KEY_DIR + CA_FILENAME, CA_PASSWORD);
++		}
++		
++		// Key store containing client key to sign document
++		final KeyStore clientStore = loadKeyStore(null, keyPassword);
++		
++		// 1) Sign PDF
++		signPDF(PREFIX_PDF_DIR + PDF_FILENAME, PREFIX_PDF_DIR + "signed_" +
++            outPostfix + PDF_FILENAME, clientStore, trustedStore, keyAlias,
++                keyPassword, caAlias);
++		
++		// 2) Verify signature
++		// System.out.println( "Verified: " + verifyPDF(PREFIX_PDF_DIR +
++		// "signed_" + PDF_FILENAME, trustedStore, crl ) );
++		
++		// /*"c:\\Support\\malanina\\Reader-1.pdf"*/
++		System.out.println( "Verified: " + verifyPDF(PREFIX_PDF_DIR + "signed_" +
++            outPostfix + PDF_FILENAME, trustedStore, null) );
++	}
++
++    public static void main(String[] args) throws Exception {
++        main_(CRL_FILENAME, CA_FILENAME, CA_ALIAS_2001, CA_PASSWORD, ALIAS_2001, PASSWORD_2001, "2001_");
++        main_(CRL_FILENAME, CA_FILENAME, CA_ALIAS_2012, CA_PASSWORD, ALIAS_2012_256, PASSWORD_2012_256, "2001_256_");
++        main_(CRL_FILENAME, CA_FILENAME, CA_ALIAS_2012, CA_PASSWORD, ALIAS_2012_512, PASSWORD_2012_512, "2012_512_");
++    }
++
++
++}
+Index: src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF_0.java
+===================================================================
+--- src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF_0.java	(revision 0)
++++ src/test/java/com/itextpdf/text/pdf/cprocsp/CryptoProPDF_0.java	(working copy)
+@@ -0,0 +1,346 @@
++/**
++ * Example shows how sign PDF file (GOST 34.10 algorithm) and verify signature and certificate.
++ */
++package com.itextpdf.text.pdf.cprocsp;
++
++import java.io.ByteArrayInputStream;
++import java.io.FileInputStream;
++import java.io.FileOutputStream;
++import java.io.IOException;
++import java.io.InputStream;
++import java.security.KeyStore;
++import java.security.KeyStoreException;
++import java.security.MessageDigest;
++import java.security.NoSuchAlgorithmException;
++import java.security.NoSuchProviderException;
++import java.security.PrivateKey;
++import java.security.SignatureException;
++import java.security.UnrecoverableKeyException;
++import java.security.cert.CRL;
++import java.security.cert.CRLException;
++import java.security.cert.Certificate;
++import java.security.cert.CertificateException;
++import java.security.cert.CertificateFactory;
++import java.security.cert.X509Certificate;
++import java.util.ArrayList;
++import java.util.Calendar;
++import java.util.HashMap;
++import java.util.List;
++
++import org.bouncycastle.asn1.ASN1InputStream;
++import org.bouncycastle.asn1.DERObject;
++import org.bouncycastle.tsp.TimeStampToken;
++
++import ru.CryptoPro.JCP.tools.Array;
++
++import com.itextpdf.text.DocumentException;
++import com.itextpdf.text.pdf.AcroFields;
++import com.itextpdf.text.pdf.OcspClientBouncyCastle;
++import com.itextpdf.text.pdf.PdfDate;
++import com.itextpdf.text.pdf.PdfDictionary;
++import com.itextpdf.text.pdf.PdfName;
++import com.itextpdf.text.pdf.PdfPKCS7;
++import com.itextpdf.text.pdf.PdfReader;
++import com.itextpdf.text.pdf.PdfSignature;
++import com.itextpdf.text.pdf.PdfSignatureAppearance;
++import com.itextpdf.text.pdf.PdfStamper;
++import com.itextpdf.text.pdf.PdfString;
++import com.itextpdf.text.pdf.TSAClient;
++import com.itextpdf.text.pdf.TSAClientBouncyCastle;
++
++public class CryptoProPDF_0 {
++
++	// Path to PDF files
++	final static String PREFIX_PDF_DIR = "C:\\PDF\\cp\\used\\";
++	// Path to certificate, CRL, CA, key store
++	final static String PREFIX_KEY_DIR = "C:\\PDF\\keys\\";
++	
++	// Alias of key in client store
++	final static String ALIAS = "gost_exch";
++	// Password to client store
++	final static char[] PASSWORD = "Pass1234".toCharArray();
++	
++	// Alias of CA certificate in trusted store
++	final static String CA_ALIAS = "root";
++	// Password to trusted store
++	final static char[] CA_PASSWORD = PASSWORD;
++	// CA file
++	final static String CA_FILENAME =  "CATrustStore";
++	
++	// PDF file
++	final static String PDF_FILENAME = "example.pdf";
++	// CRL file
++	final static String CRL_FILENAME = "certcrl.crl";
++		
++	/**
++	 * Loads key store.
++	 * @param storeFile - key store file.
++	 * @param password - password to store.
++	 * @return opened key store.
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws NoSuchAlgorithmException
++	 * @throws CertificateException
++	 * @throws IOException
++	 */
++	private static KeyStore loadKeyStore(String storeFile, char[] password) throws KeyStoreException, NoSuchProviderException, 
++	NoSuchAlgorithmException, CertificateException, IOException {
++		
++		KeyStore keyStore = KeyStore.getInstance("HDImageStore","JCP");
++		keyStore.load( (storeFile == null) ? null : new FileInputStream(storeFile), password);
++		
++		return keyStore;
++	}
++	
++	/**
++	 * Signs PDF file (CryptoPro PDF / PKCS7 DETACHED) and saves it.
++	 * @param fileToSign - source PDF file.
++	 * @param signedFile - signed PDF file.
++	 * @param signStore - store containing key to sign file.
++	 * @param trustedStore - store containing trusted CA certificate.
++	 * @throws IOException
++	 * @throws DocumentException
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws NoSuchAlgorithmException
++	 * @throws CertificateException
++	 * @throws UnrecoverableKeyException
++	 */
++	public static void signPDF(String fileToSign, String signedFile, KeyStore signStore, KeyStore trustedStore) throws IOException, 
++	DocumentException, KeyStoreException, NoSuchProviderException, NoSuchAlgorithmException, CertificateException, 
++	UnrecoverableKeyException {
++		
++		// Get key and certificates
++		PrivateKey key = (PrivateKey)signStore.getKey(ALIAS, PASSWORD);
++		
++		int chainLength = (trustedStore == null) ? 1 : 2;
++		
++		Certificate[] chain = new Certificate[chainLength];
++		chain[0] = signStore.getCertificate(ALIAS);
++		
++		if (trustedStore != null) {
++			chain[1] = trustedStore.getCertificate(CA_ALIAS);
++		}
++		
++		// Load PDF
++		PdfReader reader = new PdfReader(fileToSign);
++		FileOutputStream fout = new FileOutputStream(signedFile);
++		PdfStamper stp = PdfStamper.createSignature(reader, fout, '\0');
++		
++		// Sign document
++		PdfSignatureAppearance sap = stp.getSignatureAppearance();
++		sap.setProvider("JCP");
++		sap.setCrypto(key, chain, null, PdfSignatureAppearance.CRYPTOPRO_SIGNED);
++		sap.setReason("I'm the signer");
++		sap.setLocation("CryptoPro");
++		stp.close();
++
++	}
++	
++	/*
++	public static void signPDFPlusTS(String fileToSign, String signedFile, KeyStore signStore, KeyStore trustedStore) 
++			throws Exception {
++		
++		// Get key and certificates
++		PrivateKey key = (PrivateKey)signStore.getKey(ALIAS, PASSWORD);
++		
++		int chainLength = (trustedStore == null) ? 1 : 2;
++		
++		Certificate[] chain = new Certificate[chainLength];
++		chain[0] = signStore.getCertificate(ALIAS);
++		
++		if (trustedStore != null) {
++			chain[1] = trustedStore.getCertificate(CA_ALIAS);
++		}
++		
++		TSAClient tsc = new TSAClientBouncyCastle("http://www.cryptopro.ru:80/tsp/", null, null);
++
++		// Load PDF
++		PdfReader reader = new PdfReader(fileToSign);
++		FileOutputStream fout = new FileOutputStream(signedFile);
++		PdfStamper stp = PdfStamper.createSignature(reader, fout, '\0');
++		
++		// Sign document
++		PdfSignatureAppearance sap = stp.getSignatureAppearance();
++		sap.setProvider("JCP");
++		sap.setCrypto(key, chain, null, PdfSignatureAppearance.CRYPTOPRO_SIGNED);
++		sap.setReason("I'm the signer");
++		sap.setLocation("CryptoPro");
++		
++		PdfSignature dic = new PdfSignature(PdfName.ADOBE_CryptoProPDF, new PdfName("adbe.pkcs7.detached"));
++		dic.setReason(sap.getReason());
++		dic.setLocation(sap.getLocation());
++		dic.setContact(sap.getContact());
++		dic.setDate(new PdfDate(sap.getSignDate()));
++		sap.setCryptoDictionary(dic);
++		
++		int contentEstimated = 15000;
++		HashMap exc = new HashMap();
++		exc.put(PdfName.CONTENTS, new Integer(contentEstimated * 2 + 2));
++		sap.preClose(exc);
++		
++		PdfPKCS7 sgn = new PdfPKCS7(key, chain, null, "GOST3411", null, false);
++		InputStream data = sap.getRangeStream();
++		
++		MessageDigest messageDigest = MessageDigest.getInstance("GOST3411");
++		byte buf[] = new byte[8192];
++		
++		int n;
++		while ((n = data.read(buf)) > 0) {
++		    messageDigest.update(buf, 0, n);
++		}
++		
++		byte hash[] = messageDigest.digest();
++		Calendar cal = Calendar.getInstance();
++		byte[] ocsp = null;
++		
++		if (chain.length >= 2) {
++		    String url = PdfPKCS7.getOCSPURL((X509Certificate)chain[0]);
++		    if (url != null && url.length() > 0)
++		        ocsp = new OcspClientBouncyCastle().getEncoded((X509Certificate)chain[0], (X509Certificate)chain[1], url);
++		}
++		
++		byte sh[] = sgn.getAuthenticatedAttributeBytes(hash, cal, ocsp);
++		sgn.update(sh, 0, sh.length);
++
++		byte[] encodedSig = sgn.getEncodedPKCS7(hash, cal, tsc, ocsp);
++
++		if (contentEstimated + 2 < encodedSig.length)
++		    throw new Exception("Not enough space");
++
++		byte[] paddedSig = new byte[contentEstimated];
++		System.arraycopy(encodedSig, 0, paddedSig, 0, encodedSig.length);
++
++		PdfDictionary dic2 = new PdfDictionary();
++		dic2.put(PdfName.CONTENTS, new PdfString(paddedSig).setHexWriting(true));
++		sap.close(dic2);
++		
++		//stp.close();
++
++	}
++	*/
++	
++	/**
++	 * Verifies PKCS7 (CryptoPro PDF / PKCS7 DETACHED) of signed PDF file.
++	 * @param fileToVerify - source PDF file to be verified.
++	 * @param trustedStore - store containing trusted CA certificate to verify client certificate.
++	 * @param crl - CRL file to verify certificate chain.
++	 * @return true if signature is valid otherwise throws exception.
++	 * @throws IOException
++	 * @throws SignatureException
++	 * @throws NoSuchAlgorithmException
++	 * @throws KeyStoreException
++	 * @throws NoSuchProviderException
++	 * @throws CertificateException
++	 * @throws CRLException
++	 */
++	public static boolean verifyPDF(String fileToVerify, KeyStore trustedStore, CRL crl) throws IOException, SignatureException, NoSuchAlgorithmException, 
++	KeyStoreException, NoSuchProviderException, CertificateException, CRLException {
++		
++		// CRL collection
++		List<CRL> crls = null;
++		
++		if (crl != null) {
++			crls = new ArrayList<CRL>(1);
++			crls.add(crl);
++		}
++		
++		boolean result = false;
++		
++		// Load document
++		PdfReader checker = new PdfReader(fileToVerify);
++		AcroFields af = checker.getAcroFields();
++		
++		// Get signatures
++		ArrayList<String> names = af.getSignatureNames();
++	
++		for (int k = 0; k < names.size(); ++k) {
++		    
++			String name = (String)names.get(k);
++			
++			System.out.println("Signature: " + name);
++			
++			// Get one signature and verify it
++		    PdfPKCS7 pk = af.verifySignature(name, "JCP");
++		    result = pk.verify();
++		    /*
++		    PdfDictionary d = af.getSignatureDictionary(name);
++		    PdfString contents = d.getAsString(PdfName.CONTENTS);
++		    
++		    ASN1InputStream in = new ASN1InputStream(new ByteArrayInputStream(contents.getOriginalBytes()));
++		    DERObject pkcs = in.readObject();
++		    
++		    Array.writeFile(PREFIX_PDF_DIR + "pkcs7.cms", pkcs.getDEREncoded());
++		    
++		    return result;
++		    */
++		    
++		    // Signer certificate
++		    System.out.println("Signer certificate DN: " + pk.getSigningCertificate().getSubjectDN());
++
++		    // Get time stamp and chain
++		    Calendar cal = pk.getSignDate();
++		    X509Certificate pkc[] = (X509Certificate[])pk.getSignCertificateChain();
++		    
++		    TimeStampToken ts = pk.getTimeStampToken();
++		    if (ts != null) {
++		        boolean impr = pk.verifyTimestampImprint();
++		        System.out.println("Timestamp imprint verifies: " + impr);
++		        cal = pk.getTimeStampDate();
++		        System.out.println("Timestamp date: " + cal);
++		    }
++		    
++		    System.out.println("Subject: " + PdfPKCS7.getSubjectFields(pk.getSigningCertificate()));
++		    System.out.println("Document modified: " + !result);
++		    
++		    // Check certificate chain
++		    Object fails[] = PdfPKCS7.verifyCertificates(pkc, trustedStore, crls, cal);
++		    if (fails == null)
++		        System.out.println("Certificates verified against the KeyStore");
++		    else
++		        System.out.println("Certificate failed: " + fails[1]);
++		    
++		}
++		
++		return result;
++	}
++	
++	/**
++	 * @param args
++	 * @throws Exception 
++	 */
++	public static void main(String[] args) throws Exception {
++
++		/*
++		// CRL
++		CRL crl = null;
++		*/
++		
++		// Trusted store (CA) to build chain
++		KeyStore trustedStore = null;
++		/*
++		if (CRL_FILENAME != null) {
++			crl = CertificateFactory.getInstance("X.509").generateCRL(new FileInputStream(PREFIX_KEY_DIR + CRL_FILENAME));
++		}
++		*/
++		
++		// Key store containing trusted certificate to build chain
++		if (CA_FILENAME != null) {
++			trustedStore = loadKeyStore(PREFIX_KEY_DIR + CA_FILENAME, CA_PASSWORD);
++		}
++		/*
++		// Key store containing client key to sign document
++		final KeyStore clientStore = loadKeyStore(null, PASSWORD);
++		
++		// 1) Sign PDF
++		signPDF(PREFIX_PDF_DIR + PDF_FILENAME, 
++				PREFIX_PDF_DIR + "signed_" + PDF_FILENAME, clientStore, trustedStore );
++		
++		// 2) Verify signature
++		System.out.println( "Verified: " + verifyPDF(PREFIX_PDF_DIR + "signed_" + PDF_FILENAME, trustedStore, null ) );
++		*/
++		
++		System.out.println( "Verified: " + verifyPDF("c:\\Support\\malanina\\Reader-1.pdf", null, null ) );
++		
++	}
++}
+Index: src/test/java/SignPDF.java
+===================================================================
+--- src/test/java/SignPDF.java	(revision 0)
++++ src/test/java/SignPDF.java	(working copy)
+@@ -0,0 +1,236 @@
++
++import java.io.File;
++import java.io.FileOutputStream;
++import java.io.IOException;
++import java.security.KeyStore;
++import java.security.PrivateKey;
++import java.security.cert.Certificate;
++
++import java.util.Properties;
++
++import ru.CryptoPro.JCP.JCP;
++
++import com.itextpdf.text.pdf.PdfReader;
++import com.itextpdf.text.pdf.PdfSignatureAppearance;
++import com.itextpdf.text.pdf.PdfStamper;
++
++/**
++ * Класс SignPDF предназначен для подписи PDF-файлов.
++ * Используется пропатченный itextpdf версии 1.5.3.
++ * 
++ * @author afevma
++ *
++ */
++public class SignPDF {
++
++	private static final String IN_PDF = "-in";
++	private static final String OUT_PDF = "-out";
++	private static final String IN_DIR_PDF = "-indir";
++	private static final String OUT_DIR_PDF = "-outdir";
++	private static final String ALIAS = "-alias";
++	private static final String PASSWORD = "-password";
++	private static final String LOCATION = "-location";
++	private static final String REASON = "-reason";
++
++	/**
++	 * @param args
++	 */
++	public static void main(String[] args) throws Exception {
++		
++		if (args.length == 0) {
++			help();
++			System.exit(0);
++		} // if
++		
++		final Properties argList = new Properties();
++		
++		argList.setProperty(IN_PDF, getValue(IN_PDF, args, ""));
++		argList.setProperty(IN_DIR_PDF, getValue(IN_DIR_PDF, args, ""));
++		argList.setProperty(OUT_PDF, getValue(OUT_PDF, args, ""));
++		argList.setProperty(OUT_DIR_PDF, getValue(OUT_DIR_PDF, args, ""));
++		argList.setProperty(ALIAS, getValue(ALIAS, args, ""));
++		argList.setProperty(PASSWORD, getValue(PASSWORD, args, ""));
++		argList.setProperty(LOCATION, getValue(LOCATION, args, "Crypto-Pro LLC"));
++		argList.setProperty(REASON, getValue(REASON, args, "JCP Documentation"));
++		
++		String srcDocument = argList.getProperty(IN_PDF);
++		String srcDirectory = argList.getProperty(IN_DIR_PDF);
++		String dstDocument = argList.getProperty(OUT_PDF);
++		String dstDirectory = argList.getProperty(OUT_DIR_PDF);
++		String alias = argList.getProperty(ALIAS);
++		String password = argList.getProperty(PASSWORD);
++		String location = argList.getProperty(LOCATION);
++		String reason = argList.getProperty(REASON);
++		
++		argList.list(System.out);
++		
++		if (((srcDocument.length() == 0 || dstDocument.length() == 0) && 
++			(srcDirectory.length() == 0 || dstDirectory.length() == 0)) || alias.length() == 0) {
++			help();
++			System.exit(0);
++		} // if
++		
++		char[] real_password = password.length() != 0 ? password.toCharArray() : null;
++		
++		// Если подписываем отдельный файл.
++		if (srcDocument.length() > 0) {
++			
++			File file = new File(srcDocument);
++			File destination = new File(dstDocument);
++			
++			proceedOneFile(file, destination, alias, real_password, location, reason);
++			
++		} // if
++		// Если подписываем файлы в папке.
++		else {
++			
++			File source = new File(srcDirectory);
++			File[] files = source.listFiles();
++			
++			if (files == null || files.length == 0) {
++				return;
++			}
++
++			File destination = new File(dstDirectory);
++			destination.mkdirs();
++
++			for (File file : files) {
++				proceedOneFile(file, destination, alias, real_password, location, reason);
++			} // for
++			
++		} // else
++
++	}
++	
++	/**
++	 * Информация о запуске.
++	 * 
++	 */
++	private static void help() {
++		System.out.println("-in <file.pdf> -out <file.pdf> [-in_dir <directory> -out_dir <directory>] " +
++			"-alias <key> -password <pin> [-location <location> -reason <reason>]");
++	}
++	
++	/**
++	 * Извлечение параметров.
++	 * 
++	 * @param com параметр.
++	 * @param arg аргументы командной строки (пары парамтр значение параметра).
++	 * @param parDef значение параметра по умолчанию.
++	 * @return значение параметра.
++	 */
++	private static String getValue(String com, String[] arg, String parDef) {
++	   
++		String par = null;
++	    
++	    for (int i = 0; i < arg.length; i++) {
++	        
++	    	if (arg[i].equalsIgnoreCase(com) &&
++	            !"-".equals(arg[i + 1].substring(0, 1))) {
++	            par = arg[i + 1];
++	        } // if
++	    } // for
++	    
++	    if (par == null) { 
++	    	par = parDef;
++	    } // if
++
++	    return par;
++	}
++	
++	/**
++	 * Подпись одного PDF-файла (CryptoPro PDF / PKCS7 DETACHED) и сохранение в файл.
++	 * 
++	 * @param inFile исходный PDF-файл.
++	 * @param destination место сохранения подписанного PDF-файл.
++	 * @param alias алиас ключа.
++	 * @param password пароль.
++	 * @param location адрес.
++	 * @param reason причина.
++	 * @throws Exception
++	 */
++	private static void proceedOneFile(File inFile, File destination, String alias, char[] password, 
++		String location, String reason) throws Exception {
++		
++		String fileName = inFile.getName();
++		
++		if (inFile.isDirectory()) {
++			System.out.println("Skip Directory: " + fileName);
++			return;
++		} // if
++
++		if (fileName.indexOf(".pdf") != fileName.length() - 4) {
++			System.out.println("Skip file: " + fileName);
++			return;
++		} // if
++
++		System.out.println("Sign file: " + fileName);
++		
++		String baseOutFileName = destination.getAbsolutePath() + 
++			(destination.isDirectory() ? (File.separator + fileName) : "");
++		File baseOutFile = new File(baseOutFileName);
++		String outFileName = baseOutFileName + ".signed";
++		
++		File outFile = new File(outFileName);
++		System.out.println("Destination file: " + outFile.getCanonicalPath());
++		
++		// Подписываем.
++		signPDF(inFile.getCanonicalPath(), outFile.getCanonicalPath(), alias, password, location, reason);
++		
++		// Удаляем исходный файл (если он совпадает по имени с подписанным) и переименовываем 
++		// подписанный файл.
++		if (inFile.getCanonicalPath().equalsIgnoreCase(baseOutFile.getCanonicalPath())) {
++			
++			if (!inFile.delete() || !outFile.renameTo(baseOutFile)) {
++				throw new IOException("Couldn't delete and rename file '" + outFile.getName() + "' to '" + fileName + "'");
++			} // if
++			
++		} // if
++		else {
++			
++			if (!outFile.renameTo(baseOutFile)) {
++				throw new IOException("Couldn't rename file '" + outFile.getName() + "' to '" + fileName + "'");
++			} // if
++			
++		} // else
++			
++	}
++	
++	/**
++	 * Подпись конкретного PDF-файла (CryptoPro PDF / PKCS7 DETACHED) и сохранение в файл.
++	 * 
++	 * @param fileToSign исходный PDF-файл.
++	 * @param signedFile подписанный PDF-файл.
++	 * @param alias алиас ключа.
++	 * @param password пароль.
++	 * @param location адрес.
++	 * @param reason причина.
++	 * @throws Exception
++	 */
++	public static void signPDF(String fileToSign, String signedFile, String alias, 
++		char[] password, String location, String reason) throws Exception {
++		
++		KeyStore keyStore = KeyStore.getInstance(JCP.HD_STORE_NAME, JCP.PROVIDER_NAME);
++		keyStore.load(null, null);
++		
++		PrivateKey key = (PrivateKey)keyStore.getKey(alias, password);
++		Certificate[] chain = keyStore.getCertificateChain(alias);
++		
++		// Загружаем PDF-файл.
++		PdfReader reader = new PdfReader(fileToSign);
++		FileOutputStream fout = new FileOutputStream(signedFile);
++		PdfStamper stp = PdfStamper.createSignature(reader, fout, '\0');
++		
++		// Подписываем документ.
++		PdfSignatureAppearance sap = stp.getSignatureAppearance();
++		sap.setCrypto(key, chain, null, PdfSignatureAppearance.CRYPTOPRO_SIGNED);
++		sap.setReason(reason);
++		sap.setLocation(location);
++		
++		stp.close();
++		fout.close();
++		reader.close();
++
++	}
++
++}
