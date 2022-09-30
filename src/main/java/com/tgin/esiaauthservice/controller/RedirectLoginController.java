@@ -23,14 +23,5 @@ public class RedirectLoginController {
         return "redirect:" + esiaAuthUrl;
     }
 
-    @GetMapping(value = "/esia/login", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String login(
-            @RequestParam(name = "TimeZone", required = false) TimeZone timeZone
-    ) {
 
-
-        String esiaAuthUrl = esiaAuthUrlService.generateAuthCodeUrl();
-
-        return "redirect:" + esiaAuthUrl;
-    }
 }
