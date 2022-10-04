@@ -39,7 +39,7 @@ public class UrlHelper {
     }
 
     public String handleReturn(String authCode, String error, String errorDescription) throws IOException {
-        String str = "TOKEN: \n\n";
+        String str ="";// "TOKEN: \n\n";
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost("https://esia-portal1.test.gosuslugi.ru/aas/oauth2/te");

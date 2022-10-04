@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.*;
 import java.util.TimeZone;
@@ -22,16 +23,16 @@ public class AuthController {
 
 
     @GetMapping(path = "/esia/logout")
-    public String logout() throws IOException {
-        String url = urlHelper.handleLogout();
-        return "redirect:" + url;
+    public RedirectView logout() throws IOException {
+        String logoutUrl = urlHelper.handleLogout();
+        return new RedirectView(logoutUrl); //"redirect:" + url;
     }
     @GetMapping(value = "/esia/login", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String login(
+    public RedirectView login(
             @RequestParam(name = "TimeZone", required = false) TimeZone timeZone
     ) {
         String esiaAuthUrl = urlHelper.handleAuth();
-        return "redirect:" + esiaAuthUrl;
+        return new RedirectView(esiaAuthUrl); //"redirect:" + esiaAuthUrl;
     }
 
     @GetMapping(path = "/esia_return", produces = "text/plain")
