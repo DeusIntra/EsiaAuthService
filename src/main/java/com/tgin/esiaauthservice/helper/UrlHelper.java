@@ -1,7 +1,6 @@
-package com.tgin.esiaauthservice.controller;
+package com.tgin.esiaauthservice.helper;
 
 import com.tgin.esiaauthservice.EsiaProperties;
-import com.tgin.esiaauthservice.helper.EsiaAuthUrlService;
 import lombok.RequiredArgsConstructor;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.entity.UrlEncodedFormEntity;
@@ -11,12 +10,9 @@ import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.core5.http.HttpEntity;
 import org.apache.hc.core5.http.NameValuePair;
 import org.apache.hc.core5.http.message.BasicNameValuePair;
-import org.springframework.http.MediaType;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -24,30 +20,25 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
-import java.util.TimeZone;
 
-@RestController
+@Service
 @RequiredArgsConstructor
-public class EsiaReturnController {
+public class UrlHelper {
+
+
     private final EsiaProperties esiaProperties;
     private final EsiaAuthUrlService esiaAuthUrlService;
 
-    @GetMapping(value = "/esia/login", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String login(
-            @RequestParam(name = "TimeZone", required = false) TimeZone timeZone
-    ) {
 
-        String esiaAuthUrl = esiaAuthUrlService.generateAuthCodeUrl();
-        return "redirect:" + esiaAuthUrl;
+    public String handleAuth() {
+        return esiaAuthUrlService.generateAuthCodeUrl();
     }
 
-    @GetMapping(path = "/esia_return", produces = "text/plain")
-    public String handleReturn(
-            @RequestParam(name = "code", required = false) String authCode,
-            @RequestParam(name = "error", required = false) String error,
-            @RequestParam(name = "error_description", required = false) String errorDescription
-    ) throws IOException {
+    public String handleLogout() {
+        return "https://esia-portal1.test.gosuslugi.ru/idp/ext/Logout?client_id=" + esiaProperties.getClientId();
+    }
 
+    public String handleReturn(String authCode, String error, String errorDescription) throws IOException {
         String str = "TOKEN: \n\n";
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -56,12 +47,6 @@ public class EsiaReturnController {
         str = getEntityContent(str, entity);
 
         return PrintGetEsiaReturn(authCode, error, errorDescription, str);
-    }
-
-    @GetMapping(path = "/esia/logout")
-    public String handleLogout() throws IOException {
-
-        return "redirect:" + "https://esia-portal1.test.gosuslugi.ru/idp/ext/Logout?client_id=PILOT10";
     }
 
     private String getEntityContent(String str, HttpEntity entity) throws IOException {
@@ -129,5 +114,4 @@ public class EsiaReturnController {
 
         return joiner.toString();
     }
-
 }

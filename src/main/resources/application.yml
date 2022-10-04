@@ -1,11 +1,12 @@
 server.port: 8080
 
+ESIA_CLIENT_ID: PILOT10
 ESIA_KEYSTORE_ALIAS: "rnd-F-B0FC-C706-7DF9-61A1-97BA-A318-D338"
 ESIA_PRIVATE_KEY_PASSWORD: "2969719"
 
 esia:
   auth-code-url: https://esia-portal1.test.gosuslugi.ru/aas/oauth2/ac
-  client-id: PILOT10 #${ESIA_CLIENT_ID}
+  client-id: ${ESIA_CLIENT_ID}
   return-url: http://localhost:${server.port}/esia_return #/esia/login/success
 
   keystore-alias: ${ESIA_KEYSTORE_ALIAS}
