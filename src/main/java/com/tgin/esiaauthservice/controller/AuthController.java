@@ -21,33 +21,50 @@ public class AuthController {
 
     private final UrlHelper urlHelper;
 
-
     @GetMapping(path = "/esia/logout")
     public RedirectView logout() throws IOException {
-        String logoutUrl = urlHelper.handleLogout();
+        String logoutUrl = urlHelper.getLogoutUrl();
         return new RedirectView(logoutUrl); //"redirect:" + url;
     }
+
+    //Редиректит на return_url с параметрами code (авторизационный код) и state
     @GetMapping(value = "/esia/login", produces = MediaType.APPLICATION_JSON_VALUE)
     public RedirectView login(
             @RequestParam(name = "TimeZone", required = false) TimeZone timeZone
     ) {
-        String esiaAuthUrl = urlHelper.handleAuth();
-        return new RedirectView(esiaAuthUrl); //"redirect:" + esiaAuthUrl;
+        String loginUrl = urlHelper.getLoginUrl();
+        return new RedirectView(loginUrl); //"redirect:" + esiaAuthUrl;
     }
 
     @GetMapping(path = "/esia_return", produces = "text/plain")
     public String handleReturn(
             @RequestParam(name = "code", required = false) String authCode,
+            @RequestParam(name = "state", required = false) String state,
             @RequestParam(name = "error", required = false) String error,
             @RequestParam(name = "error_description", required = false) String errorDescription
+    ) {
+        boolean isLoggedIn = error == null;
+        urlHelper.codeCached = authCode;
+        return "code:" + authCode + "\n\nstate:" + state + "\n\nsecret:" + urlHelper.secretCached + "\n\nerror:" + error + "\n\ndescription:" + errorDescription + "\n\nloggedIn:"+ isLoggedIn;//urlHelper.handleReturn(authCode, state, error, errorDescription);
+    }
+
+    @GetMapping(path = "/esia/isLoggedIn", produces = "application/json")
+    public String isLoggedIn(
+            @RequestParam(name = "secret", required = false) String clientSecret
     ) throws IOException {
 
-        return urlHelper.handleReturn(authCode, error, errorDescription);
+        String loggedIn = urlHelper.isLoggedIn(clientSecret);
+        return loggedIn;
     }
 
     @GetMapping(value = "/esia/login/success", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String oauthSuccessLogin() throws NotImplementedException {
-        throw new NotImplementedException();
+    public String oauthSuccessLogin(
+            @RequestParam(name = "code", required = false) String code,
+            @RequestParam(name = "state", required = false) String state,
+            @RequestParam(name = "error", required = false) String error,
+            @RequestParam(name = "error_description", required = false) String errorDescription
+    ) {
+        return code + "\n\n" + state;
     }
 
     @PostMapping(value = "/esia/login/success", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -57,11 +74,6 @@ public class AuthController {
 
     @GetMapping(value = "/esia/logout/success", produces = MediaType.APPLICATION_JSON_VALUE)
     public String samlLogoutSuccess() throws NotImplementedException {
-        throw new NotImplementedException();
-    }
-
-    @GetMapping(value = "/esia/isLoggedIn", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String isLoggedIn() throws NotImplementedException {
         throw new NotImplementedException();
     }
 
