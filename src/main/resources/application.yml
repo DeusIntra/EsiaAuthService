@@ -7,7 +7,7 @@ ESIA_PRIVATE_KEY_PASSWORD: "2969719"
 esia:
   auth-code-url: https://esia-portal1.test.gosuslugi.ru/aas/oauth2/ac
   client-id: ${ESIA_CLIENT_ID}
-  return-url: http://localhost:${server.port}/esia_return #/esia/login/success
+  return-url: http://localhost:${server.port}/esia/login/success #/esia_return
 
   keystore-alias: ${ESIA_KEYSTORE_ALIAS}
   keystore-password: ${ESIA_PRIVATE_KEY_PASSWORD}

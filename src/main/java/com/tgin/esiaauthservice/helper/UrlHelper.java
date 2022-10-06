@@ -14,8 +14,6 @@ import org.apache.hc.core5.http.message.BasicNameValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Base64Utils;
-import org.springframework.util.StringUtils;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.*;
@@ -23,7 +21,6 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringJoiner;
 
 @Service
 @RequiredArgsConstructor
@@ -32,17 +29,17 @@ public class UrlHelper {
     private final EsiaProperties esiaProperties;
     private final CryptoHelper cryptoHelper;
     private final String personDataUrl = "https://esia-portal1.test.gosuslugi.ru/rs/prns"; // pg 88
-    private final String authCoderUrl = "https://esia-portal1.test.gosuslugi.ru/aas/oauth2/ac"; // pg 134
-    private final String accessMarkerUrl = "https://esia-portal1.test.gosuslugi.ru/aas/oauth2/te"; // pg 152
-    private final String logoutUrl = "https://esia-portal1.test.gosuslugi.ru/idp/ext/Logout";
+    private final String accessMarkerUrl = "https://esia-portal1.test.gosuslugi.ru/aas/oauth2/te"; // pg 134
+    private final String authCoderUrl = "https://esia-portal1.test.gosuslugi.ru/aas/oauth2/ac"; // pg 152
 
+    private final String logoutUrl = "https://esia-portal1.test.gosuslugi.ru/idp/ext/Logout";
+    private final String scope = "openid fullname email snils"; // "openid";
     public String secretCached;
     public String codeCached;
 
 
     public String getLoginUrl() {
         String accessType = "offline"; // "online";
-        String scope = "openid"; // fullname // "fullname+email"
         String responseType = "code";
 
         try {
@@ -52,10 +49,7 @@ public class UrlHelper {
             String clientSecret = cryptoHelper.generateClientSecret(clientId, state, timestamp, scope);
             secretCached = clientSecret;
 
-            String timestampUrlEncoded = timestamp
-                    .replace("+", "%2B")
-                    .replace(":", "%3A")
-                    .replace(" ", "+");
+            String timestampUrlEncoded = timestampUrlFormat(timestamp);
 
             String redirectUrlEncoded = esiaProperties.getReturnUrl()
                     .replace(":", "%3A")
@@ -85,8 +79,7 @@ public class UrlHelper {
 
     public String isLoggedIn(String client_secret) throws IOException { // pg 152
 
-        String timestamp = cryptoHelper.generateTimestamp();
-        String scope = "openid";
+        String timestamp = timestampUrlFormat(cryptoHelper.generateTimestamp());
         String response_type = "code";
         String newState = cryptoHelper.generateState();
         String client_id = esiaProperties.getClientId();
@@ -124,16 +117,10 @@ public class UrlHelper {
         return logoutUrl + "?client_id=" + esiaProperties.getClientId();
     }
 
-    public String getIdToken() {
-        return "";
-    }
-
-    public String getAccessToken(String authCode) throws IOException {
-
+    public String getIdToken(String authCode) throws IOException {
         String clientId = esiaProperties.getClientId();
         String state = cryptoHelper.generateState();
-        String timestamp = cryptoHelper.generateTimestamp();
-        String scope = "openid";
+        String timestamp = cryptoHelper.generateTimestamp(); //timestampUrlFormat(cryptoHelper.generateTimestamp());
         String secret = cryptoHelper.generateClientSecret(clientId, state, timestamp, scope);
 
         List<NameValuePair> nvps = new ArrayList<>();
@@ -147,9 +134,40 @@ public class UrlHelper {
         nvps.add(new BasicNameValuePair("timestamp", timestamp));
         nvps.add(new BasicNameValuePair("token_type", "Bearer"));
 
-        return postRequest(accessMarkerUrl, nvps);
+        String json = postRequest(accessMarkerUrl, nvps);
+        System.out.println("\n\n"+json+"\n\n");
+        return json;
     }
 
+    public String getAccessToken(String authCode) throws IOException {
+
+        String clientId = esiaProperties.getClientId();
+        String state = cryptoHelper.generateState();
+        String timestamp = cryptoHelper.generateTimestamp(); //timestampUrlFormat(cryptoHelper.generateTimestamp());
+        String secret = cryptoHelper.generateClientSecret(clientId, state, timestamp, scope);
+
+        List<NameValuePair> nvps = new ArrayList<>();
+        nvps.add(new BasicNameValuePair("client_id", clientId));
+        nvps.add(new BasicNameValuePair("code", authCode));
+        nvps.add(new BasicNameValuePair("grant_type", "authorization_code"));
+        nvps.add(new BasicNameValuePair("client_secret", secret));
+        nvps.add(new BasicNameValuePair("state", state));
+        nvps.add(new BasicNameValuePair("redirect_uri", esiaProperties.getReturnUrl()));
+        nvps.add(new BasicNameValuePair("scope", scope));
+        nvps.add(new BasicNameValuePair("timestamp", timestamp));
+        nvps.add(new BasicNameValuePair("token_type", "Bearer"));
+
+        String json = postRequest(accessMarkerUrl, nvps);
+        return json;
+    }
+
+    public String getPersonData(String accessToken) throws IOException {
+        String username = cryptoHelper.getUsername(accessToken);
+        String url = personDataUrl + "/" + username;
+        return getRequest(url, accessToken);
+    }
+
+    /*
     public String handleReturn(String authCode, String state, String error, String errorDescription) throws IOException {
 
         String timestamp = cryptoHelper.generateTimestamp();
@@ -207,6 +225,16 @@ public class UrlHelper {
         return joiner.toString();
     }
 
+     */
+
+    private String timestampUrlFormat(String timestamp) {
+        String timestampUrlEncoded = timestamp
+                .replace("+", "%2B")
+                .replace(":", "%3A")
+                .replace(" ", "+");
+        return timestampUrlEncoded;
+    }
+
     private String getEntityContent(HttpEntity entity) throws IOException {
         InputStream inputStream = entity.getContent();
         StringBuilder textBuilder = new StringBuilder();
@@ -224,7 +252,6 @@ public class UrlHelper {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
         httpPost.setEntity(new UrlEncodedFormEntity(nvps));
-        String str = httpPost.toString();
         CloseableHttpResponse response = httpclient.execute(httpPost);
         HttpEntity entity = response.getEntity();
         return getEntityContent(entity);
@@ -233,49 +260,28 @@ public class UrlHelper {
     private String getRequest(String url) throws IOException {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         HttpGet httpGet = new HttpGet(url);
-        //httpGet.setEntity(new UrlEncodedFormEntity(nvps));
         CloseableHttpResponse response = httpclient.execute(httpGet);
         HttpEntity entity = response.getEntity();
         return getEntityContent(entity);
     }
 
-
-    /*
-    public String getAccessMarker(String authCode, String client_secret) throws IOException {
-
-        String client_id = esiaProperties.getClientId();
-        String code = authCode;
-        String grant_type = "authorization_code"; // pg 137 ??
-        String state = esiaAuthUrlService.generateState();
-        String redirect_uri = esiaProperties.getReturnUrl();
-        String scope = "openid";
-        String timestamp = esiaAuthUrlService.generateTimestamp();
-        String token_type = "Bearer";
-
-        String clientSecret = esiaAuthUrlService.generateClientSecret(client_id, state, timestamp);
-
-        List<NameValuePair> nvps = new ArrayList<>();
-        nvps.add(new BasicNameValuePair("client_id", client_id));
-        nvps.add(new BasicNameValuePair("code", code));
-        nvps.add(new BasicNameValuePair("grant_type", grant_type));
-        nvps.add(new BasicNameValuePair("client_secret", client_secret));
-        nvps.add(new BasicNameValuePair("state", state));
-        nvps.add(new BasicNameValuePair("redirect_uri", redirect_uri));
-        nvps.add(new BasicNameValuePair("scope", scope));
-        nvps.add(new BasicNameValuePair("timestamp", timestamp));
-        nvps.add(new BasicNameValuePair("token_type", token_type));
-
+    private String getRequest(String url, String accessToken) throws IOException {
         CloseableHttpClient httpclient = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost(accessMarkerUrl);
-        httpPost.setEntity(new UrlEncodedFormEntity(nvps));
-        CloseableHttpResponse response = httpclient.execute(httpPost);
+        HttpGet httpGet = new HttpGet(url);
+        httpGet.addHeader("Authorization", "Bearer " + accessToken);
+        CloseableHttpResponse response = httpclient.execute(httpGet);
         HttpEntity entity = response.getEntity();
-
         return getEntityContent(entity);
     }
 
-     */
-
-
+    public String parseAccessToken(String json) {
+        StringBuilder accessToken = new StringBuilder();
+        for (int i = 17; i < json.length(); i++) {
+            char c = json.charAt(i);
+            if (c == '\"') break;
+            accessToken.append(c);
+        }
+        return accessToken.toString();
+    }
 
 }

@@ -42,10 +42,27 @@ public class AuthController {
             @RequestParam(name = "state", required = false) String state,
             @RequestParam(name = "error", required = false) String error,
             @RequestParam(name = "error_description", required = false) String errorDescription
-    ) {
+    ) throws IOException {
         boolean isLoggedIn = error == null;
         urlHelper.codeCached = authCode;
-        return "code:" + authCode + "\n\nstate:" + state + "\n\nsecret:" + urlHelper.secretCached + "\n\nerror:" + error + "\n\ndescription:" + errorDescription + "\n\nloggedIn:"+ isLoggedIn;//urlHelper.handleReturn(authCode, state, error, errorDescription);
+        String res = "";
+        String accessToken = "";
+        if (authCode != null)
+        {
+            res = urlHelper.getAccessToken(authCode) + "\n\n";
+            accessToken = urlHelper.parseAccessToken(res);
+            //res += urlHelper.getIdToken(authCode) + "\n\n";
+            res += urlHelper.getPersonData(accessToken);
+        }
+        String result = "code:" + authCode +
+                "\n\nstate:" + state +
+                "\n\nsecret:" + urlHelper.secretCached +
+                "\n\nerror:" + error +
+                "\n\ndescription:" + errorDescription +
+                "\n\nloggedIn:"+ isLoggedIn;
+
+        if (res != "") result += "\n\njson:" + res;
+        return  result;
     }
 
     @GetMapping(path = "/esia/isLoggedIn", produces = "application/json")
@@ -57,14 +74,33 @@ public class AuthController {
         return loggedIn;
     }
 
-    @GetMapping(value = "/esia/login/success", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/esia/login/success", produces = "text/plain")//MediaType.APPLICATION_JSON_VALUE)
     public String oauthSuccessLogin(
-            @RequestParam(name = "code", required = false) String code,
+            @RequestParam(name = "code", required = false) String authCode,
             @RequestParam(name = "state", required = false) String state,
             @RequestParam(name = "error", required = false) String error,
             @RequestParam(name = "error_description", required = false) String errorDescription
-    ) {
-        return code + "\n\n" + state;
+    ) throws IOException {
+        boolean isLoggedIn = error == null;
+        urlHelper.codeCached = authCode;
+        String res = "";
+        String accessToken = "";
+        if (authCode != null)
+        {
+            res = urlHelper.getAccessToken(authCode) + "\n\n";
+            accessToken = urlHelper.parseAccessToken(res);
+            //res += urlHelper.getIdToken(authCode) + "\n\n";
+            res += urlHelper.getPersonData(accessToken);
+        }
+        String result = "code:" + authCode +
+                "\n\nstate:" + state +
+                "\n\nsecret:" + urlHelper.secretCached +
+                "\n\nerror:" + error +
+                "\n\ndescription:" + errorDescription +
+                "\n\nloggedIn:"+ isLoggedIn;
+
+        if (res != "") result += "\n\njson:" + res;
+        return  result;
     }
 
     @PostMapping(value = "/esia/login/success", produces = MediaType.APPLICATION_JSON_VALUE)

@@ -1,14 +1,19 @@
 package com.tgin.esiaauthservice.helper;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.io.UnsupportedEncodingException;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Base64;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
@@ -41,6 +46,16 @@ public class CryptoHelper {
 
     public String generateTimestamp() {
         return dateTimeFormatter.format(Instant.now());
+    }
+
+    public String getUsername(String accessToken) throws UnsupportedEncodingException, JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        String[] accessParts = accessToken.split("\\.");
+        Map<String, String> info = mapper.readValue(new String(Base64.getUrlDecoder().decode(accessParts[1]), "UTF-8"),
+                new TypeReference<Map<String, String>>() {
+                });
+        String username = info.get("urn:esia:sbj_id");
+        return username;
     }
 
 }
