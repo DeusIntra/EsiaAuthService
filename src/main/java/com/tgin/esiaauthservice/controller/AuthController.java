@@ -47,30 +47,30 @@ public class AuthController {
     }
     */
 
-    @GetMapping(value = "/esia/login/success", produces = "text/plain")//MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/esia/login/success", produces = "text/plain") // MediaType.APPLICATION_JSON_VALUE)
     public String oauthSuccessLogin(
             @RequestParam(name = "code", required = false) String authCode,
             @RequestParam(name = "state", required = false) String state,
             @RequestParam(name = "error", required = false) String error,
             @RequestParam(name = "error_description", required = false) String errorDescription
     ) throws IOException {
-        boolean isLoggedIn = error == null;
-        urlHelper.codeCached = authCode;
+        //boolean isLoggedIn = error == null;
+        //urlHelper.codeCached = authCode;
         String res = "";
         if (authCode != null)
         {
             String accessToken = urlHelper.getAccessToken(authCode) + "\n\n";
             res += urlHelper.getPersonData(accessToken);
         }
-        String result = "code:" + authCode +
+        /*String result = "code:" + authCode +
                 "\n\nstate:" + state +
                 "\n\nsecret:" + urlHelper.secretCached +
                 "\n\nerror:" + error +
                 "\n\ndescription:" + errorDescription +
-                "\n\nloggedIn:"+ isLoggedIn;
+                "\n\nloggedIn:"+ isLoggedIn;*/
 
-        if (!res.equals("")) result += "\n\njson:" + res;
-        return  result;
+        //if (!res.equals("")) result += "\n\njson:" + res;
+        return res; //result;
     }
 
     @PostMapping(value = "/esia/login/success", produces = MediaType.APPLICATION_JSON_VALUE)

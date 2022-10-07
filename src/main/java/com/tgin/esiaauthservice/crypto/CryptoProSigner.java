@@ -1,7 +1,8 @@
-package com.tgin.esiaauthservice.helper;
+package com.tgin.esiaauthservice.crypto;
 
 import com.objsys.asn1j.runtime.*;
 import com.tgin.esiaauthservice.EsiaProperties;
+
 import org.springframework.stereotype.Service;
 
 import ru.CryptoPro.Crypto.CryptoProvider;
@@ -19,44 +20,33 @@ import java.security.*;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 
-/**
- * based on http://www.cryptopro.ru/forum2/default.aspx?g=posts&t=16526
- */
 @Service
-class CryptoSigner {
+public class CryptoProSigner {
 
     private final PrivateKey privateKey;
     private final Certificate certificate;
 
-    // for java 10 and higher https://www.cryptopro.ru/forum2/default.aspx?g=posts&m=105418#post105418
     static {
         Security.addProvider(new JCP());
         Security.addProvider(new RevCheck());
         Security.addProvider(new CryptoProvider());
     }
 
-    public CryptoSigner(EsiaProperties esiaProperties) {
+    public CryptoProSigner(EsiaProperties esiaProperties) {
         try {
-
             KeyStore keyStore = KeyStore.getInstance(JCP.HD_STORE_NAME);
 
             keyStore.load(null, null); // loads from system-wide CryptoPro container
-            char[] pass = "2969719".toCharArray();
-            String alias = "rnd-F-B0FC-C706-7DF9-61A1-97BA-A318-D338";
+            char[] pass = esiaProperties.getPrivateKeyPassword().toCharArray();
+            String alias = esiaProperties.getKeystoreAlias();
 
-            Key key = keyStore.getKey(esiaProperties.getKeystoreAlias(), pass);
-            privateKey = (PrivateKey) key; //keyStore.getKey(esiaProperties.getKeystoreAlias(), esiaProperties.getPrivateKeyPassword().toCharArray());
-
-            certificate = keyStore.getCertificate(esiaProperties.getKeystoreAlias());
+            privateKey = (PrivateKey) keyStore.getKey(alias, pass);;
+            certificate = keyStore.getCertificate(alias);
 
         } catch (Exception e) {
-            throw new CryptoSignerException("Unable to create " + CryptoSigner.class.getSimpleName(), e);
+            throw new CryptoSignerException("Unable to create " + CryptoProSigner.class.getSimpleName(), e);
         }
     }
-
-    /**
-     * PKCS#7 detached signature
-     */
 
     public byte[] sign(String textToSign) {
         boolean detached = true;
@@ -66,8 +56,6 @@ class CryptoSigner {
             throw new CryptoSignerException("Unable to sign '" + textToSign.substring(0, 50) + '\'', e);
         }
     }
-
-
 
     private byte[] cmsSign(byte[] data, PrivateKey key, Certificate cert, boolean detached) throws Exception {
         Signature signature = Signature.getInstance(JCP.GOST_SIGN_2012_256_NAME);

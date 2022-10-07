@@ -33,7 +33,7 @@ public class JsonHelper {
         return mapper.readTree(json);
     }
 
-    public static String toJsonNode(ArrayList<String> list) throws JsonProcessingException {
+    public static String toJsonString(ArrayList<String> list) throws JsonProcessingException {
         return mapper.writeValueAsString(list);
     }
 }

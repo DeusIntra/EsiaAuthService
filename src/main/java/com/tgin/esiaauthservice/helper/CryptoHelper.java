@@ -1,17 +1,11 @@
 package com.tgin.esiaauthservice.helper;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
+import com.tgin.esiaauthservice.crypto.CryptoProSigner;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -22,16 +16,15 @@ import java.util.*;
 public class CryptoHelper {
     private static final Logger logger = LoggerFactory.getLogger(CryptoHelper.class);
 
-    private final CryptoSigner cryptoSigner;
+    private final CryptoProSigner cryptoProSigner;
 
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss Z")
             .withZone(ZoneId.systemDefault());
 
-
     public String generateClientSecret(String clientId, String state, String timestamp, String scope) {
         String clientSecretUnsigned = String.join("", scope, timestamp, clientId, state);
 
-        byte[] signedClientSecretBytes = cryptoSigner.sign(clientSecretUnsigned);
+        byte[] signedClientSecretBytes = cryptoProSigner.sign(clientSecretUnsigned);
         String clientSecret = Base64.getEncoder().encodeToString(signedClientSecretBytes);
         String clientSecretUrlEncoded = clientSecret.replace("+", "-")
                 .replace("/", "_")
@@ -48,6 +41,5 @@ public class CryptoHelper {
     public String generateTimestamp() {
         return dateTimeFormatter.format(Instant.now());
     }
-
 
 }
