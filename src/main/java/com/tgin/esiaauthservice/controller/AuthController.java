@@ -36,35 +36,6 @@ public class AuthController {
         return new RedirectView(loginUrl); //"redirect:" + esiaAuthUrl;
     }
 
-    @GetMapping(path = "/esia_return", produces = "text/plain")
-    public String handleReturn(
-            @RequestParam(name = "code", required = false) String authCode,
-            @RequestParam(name = "state", required = false) String state,
-            @RequestParam(name = "error", required = false) String error,
-            @RequestParam(name = "error_description", required = false) String errorDescription
-    ) throws IOException {
-        boolean isLoggedIn = error == null;
-        urlHelper.codeCached = authCode;
-        String res = "";
-        String accessToken = "";
-        if (authCode != null)
-        {
-            res = urlHelper.getAccessToken(authCode) + "\n\n";
-            accessToken = urlHelper.parseAccessToken(res);
-            //res += urlHelper.getIdToken(authCode) + "\n\n";
-            res += urlHelper.getPersonData(accessToken);
-        }
-        String result = "code:" + authCode +
-                "\n\nstate:" + state +
-                "\n\nsecret:" + urlHelper.secretCached +
-                "\n\nerror:" + error +
-                "\n\ndescription:" + errorDescription +
-                "\n\nloggedIn:"+ isLoggedIn;
-
-        if (res != "") result += "\n\njson:" + res;
-        return  result;
-    }
-
     @GetMapping(path = "/esia/isLoggedIn", produces = "application/json")
     public String isLoggedIn(
             @RequestParam(name = "secret", required = false) String clientSecret
@@ -84,12 +55,9 @@ public class AuthController {
         boolean isLoggedIn = error == null;
         urlHelper.codeCached = authCode;
         String res = "";
-        String accessToken = "";
         if (authCode != null)
         {
-            res = urlHelper.getAccessToken(authCode) + "\n\n";
-            accessToken = urlHelper.parseAccessToken(res);
-            //res += urlHelper.getIdToken(authCode) + "\n\n";
+            String accessToken = urlHelper.getAccessToken(authCode) + "\n\n";
             res += urlHelper.getPersonData(accessToken);
         }
         String result = "code:" + authCode +

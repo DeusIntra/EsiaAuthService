@@ -1,12 +1,23 @@
 server.port: 8080
 
 ESIA_CLIENT_ID: PILOT10
+SCOPE: "email mobile"
 ESIA_KEYSTORE_ALIAS: "rnd-F-B0FC-C706-7DF9-61A1-97BA-A318-D338"
 ESIA_PRIVATE_KEY_PASSWORD: "2969719"
+ESIA_SERV: "https://esia-portal1.test.gosuslugi.ru" #"https://esia.gosuslugi.ru"
+ESIA_CODE_POINT: "/aas/oauth2/ac"
+ESIA_TOKEN_POINT: "/aas/oauth2/te"
+ESIA_INFO_POINT: "/rs/prns/"
+ESIA_LOGOUT_POINT: "/idp/ext/Logout"
 
 esia:
-  auth-code-url: https://esia-portal1.test.gosuslugi.ru/aas/oauth2/ac
   client-id: ${ESIA_CLIENT_ID}
+  scope: ${SCOPE}
+  auth-code-url: ${ESIA_SERV}${ESIA_CODE_POINT}
+  token-url: ${ESIA_SERV}${ESIA_TOKEN_POINT}
+  info-url: ${ESIA_SERV}${ESIA_INFO_POINT}
+  logout-url: ${ESIA_SERV}${ESIA_LOGOUT_POINT}
+
   return-url: http://localhost:${server.port}/esia/login/success #/esia_return
 
   keystore-alias: ${ESIA_KEYSTORE_ALIAS}

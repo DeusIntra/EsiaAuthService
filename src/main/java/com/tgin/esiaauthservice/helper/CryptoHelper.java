@@ -2,6 +2,7 @@ package com.tgin.esiaauthservice.helper;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -48,7 +49,7 @@ public class CryptoHelper {
         return dateTimeFormatter.format(Instant.now());
     }
 
-    public String getUsername(String accessToken) throws UnsupportedEncodingException, JsonProcessingException {
+    public String extractUsername(String accessToken) throws UnsupportedEncodingException, JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         String[] accessParts = accessToken.split("\\.");
         Map<String, String> info = mapper.readValue(new String(Base64.getUrlDecoder().decode(accessParts[1]), "UTF-8"),
@@ -56,6 +57,21 @@ public class CryptoHelper {
                 });
         String username = info.get("urn:esia:sbj_id");
         return username;
+    }
+
+    public String getJsonValue(String json, String key) throws JsonProcessingException {
+        JsonNode node = parseJson(json);
+        return node.get(key).asText();
+    }
+
+    public String getJsonValue(String json, String key, int index) throws JsonProcessingException {
+        JsonNode node = parseJson(json);
+        return node.get(key).get(index).asText();
+    }
+
+    public JsonNode parseJson(String json) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readTree(json);
     }
 
 }

@@ -9,9 +9,14 @@ import org.springframework.boot.context.properties.ConstructorBinding;
 @Data
 public class EsiaProperties {
     private final String clientId;
-    private final String authCodeUrl;
-    private final String returnUrl;
+    private final String scope;
 
+    private final String authCodeUrl;
+    private final String tokenUrl;
+    private final String infoUrl;
+    private final String logoutUrl;
+
+    private final String returnUrl;
     private final String keystoreAlias;
     private final String privateKeyPassword;
 }
