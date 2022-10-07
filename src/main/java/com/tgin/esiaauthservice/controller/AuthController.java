@@ -22,7 +22,7 @@ public class AuthController {
     private final UrlHelper urlHelper;
 
     @GetMapping(path = "/esia/logout")
-    public RedirectView logout() throws IOException {
+    public RedirectView logout() {
         String logoutUrl = urlHelper.getLogoutUrl();
         return new RedirectView(logoutUrl); //"redirect:" + url;
     }
@@ -36,6 +36,7 @@ public class AuthController {
         return new RedirectView(loginUrl); //"redirect:" + esiaAuthUrl;
     }
 
+    /*
     @GetMapping(path = "/esia/isLoggedIn", produces = "application/json")
     public String isLoggedIn(
             @RequestParam(name = "secret", required = false) String clientSecret
@@ -44,6 +45,7 @@ public class AuthController {
         String loggedIn = urlHelper.isLoggedIn(clientSecret);
         return loggedIn;
     }
+    */
 
     @GetMapping(value = "/esia/login/success", produces = "text/plain")//MediaType.APPLICATION_JSON_VALUE)
     public String oauthSuccessLogin(
@@ -67,7 +69,7 @@ public class AuthController {
                 "\n\ndescription:" + errorDescription +
                 "\n\nloggedIn:"+ isLoggedIn;
 
-        if (res != "") result += "\n\njson:" + res;
+        if (!res.equals("")) result += "\n\njson:" + res;
         return  result;
     }
 

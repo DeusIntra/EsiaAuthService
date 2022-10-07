@@ -1,5 +1,6 @@
 package com.tgin.esiaauthservice.helper;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.tgin.esiaauthservice.EsiaProperties;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,7 @@ import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 @Service
@@ -78,6 +80,7 @@ public class UrlHelper {
         }
     }
 
+    /*
     public String isLoggedIn(String client_secret) throws IOException { // pg 152
 
         String timestamp = timestampUrlFormat(cryptoHelper.generateTimestamp());
@@ -100,6 +103,8 @@ public class UrlHelper {
 
         return getRequest(url);
     }
+
+     */
 
     public String getLogoutUrl() {
         return esiaProperties.getLogoutUrl() + "?client_id=" + esiaProperties.getClientId();
@@ -149,21 +154,26 @@ public class UrlHelper {
         nvps.add(new BasicNameValuePair("token_type", "Bearer"));
 
         String json = postRequest(esiaProperties.getTokenUrl(), nvps);
-        JsonNode node = cryptoHelper.parseJson(json);
-        return node.get("access_token").asText();
+        return JsonHelper.getJsonValue(json, "access_token");
     }
 
     public String getPersonData(String accessToken) throws IOException {
-        String username = cryptoHelper.extractUsername(accessToken);
-        String url = esiaProperties.getInfoUrl() + "/" + username;
-        String result = getRequest(url, accessToken) + "\n\n";
 
-        String contactUrl = esiaProperties.getInfoUrl() + "/" + username + "/ctts";
-        String emailUrlJson = getRequest(contactUrl, accessToken);
-        String emailUrl = cryptoHelper.getJsonValue(emailUrlJson, "elements", 0);
-        String emailJson = getRequest(emailUrl, accessToken);
-        String email = cryptoHelper.getJsonValue(emailJson, "value");
-        return result + email;
+        String username = extractUsername(accessToken);
+        String url = esiaProperties.getInfoUrl() + "/" + username;
+        String result = getRequest(url, accessToken);
+
+        String contactsUrl = esiaProperties.getInfoUrl() + "/" + username + "/ctts"; // адрес по которому получаем контактные данные
+        String contactsUrlUrlJson = getRequest(contactsUrl, accessToken); // json со списком адресовов, каждый адрес возвращает один из контактов пользователя
+        ArrayList<String> personContactsUrlList = JsonHelper.getJsonValues(contactsUrlUrlJson, "elements"); // берем список адресов
+        ArrayList<String> contacts = new ArrayList<>();
+        for (int i = 0; i < personContactsUrlList.size(); i++) { // из каждого адреса получаем контакт
+            String contactJson = getRequest(personContactsUrlList.get(i), accessToken);
+            String contact = JsonHelper.getJsonValue(contactJson, "value");
+            contacts.add(contact);
+        }
+        String node = JsonHelper.toJsonNode(contacts);
+        return result + "\n\n" + node;
     }
 
     private String timestampUrlFormat(String timestamp) {
@@ -210,5 +220,11 @@ public class UrlHelper {
         CloseableHttpResponse response = httpclient.execute(httpGet);
         HttpEntity entity = response.getEntity();
         return getEntityContent(entity);
+    }
+
+    public String extractUsername(String accessToken) throws UnsupportedEncodingException, JsonProcessingException {
+        String[] accessParts = accessToken.split("\\.");
+        String content = new String(Base64.getUrlDecoder().decode(accessParts[1]), StandardCharsets.UTF_8);
+        return JsonHelper.getJsonValue(content, "urn:esia:sbj_id");
     }
 }

@@ -4,18 +4,18 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectReader;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Base64;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -49,29 +49,5 @@ public class CryptoHelper {
         return dateTimeFormatter.format(Instant.now());
     }
 
-    public String extractUsername(String accessToken) throws UnsupportedEncodingException, JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        String[] accessParts = accessToken.split("\\.");
-        Map<String, String> info = mapper.readValue(new String(Base64.getUrlDecoder().decode(accessParts[1]), "UTF-8"),
-                new TypeReference<Map<String, String>>() {
-                });
-        String username = info.get("urn:esia:sbj_id");
-        return username;
-    }
-
-    public String getJsonValue(String json, String key) throws JsonProcessingException {
-        JsonNode node = parseJson(json);
-        return node.get(key).asText();
-    }
-
-    public String getJsonValue(String json, String key, int index) throws JsonProcessingException {
-        JsonNode node = parseJson(json);
-        return node.get(key).get(index).asText();
-    }
-
-    public JsonNode parseJson(String json) throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readTree(json);
-    }
 
 }
