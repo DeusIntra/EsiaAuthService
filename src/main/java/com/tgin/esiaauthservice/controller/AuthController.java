@@ -1,6 +1,6 @@
 package com.tgin.esiaauthservice.controller;
 
-import com.tgin.esiaauthservice.helper.UrlHelper;
+import com.tgin.esiaauthservice.EsiaManager;
 import lombok.RequiredArgsConstructor;
 
 import org.apache.hc.core5.http.NotImplementedException;
@@ -19,11 +19,11 @@ import java.util.TimeZone;
 @RequiredArgsConstructor
 public class AuthController {
 
-    private final UrlHelper urlHelper;
+    private final EsiaManager esiaManager;
 
     @GetMapping(path = "/esia/logout")
     public RedirectView logout() {
-        String logoutUrl = urlHelper.getLogoutUrl();
+        String logoutUrl = esiaManager.getLogoutUrl();
         return new RedirectView(logoutUrl); //"redirect:" + url;
     }
 
@@ -32,7 +32,7 @@ public class AuthController {
     public RedirectView login(
             @RequestParam(name = "TimeZone", required = false) TimeZone timeZone
     ) {
-        String loginUrl = urlHelper.getLoginUrl();
+        String loginUrl = esiaManager.getLoginUrl();
         return new RedirectView(loginUrl); //"redirect:" + esiaAuthUrl;
     }
 
@@ -50,27 +50,25 @@ public class AuthController {
     @GetMapping(value = "/esia/login/success", produces = "text/plain") // MediaType.APPLICATION_JSON_VALUE)
     public String oauthSuccessLogin(
             @RequestParam(name = "code", required = false) String authCode,
-            @RequestParam(name = "state", required = false) String state,
+            @RequestParam(name = "state", required = false) String state, // TODO: (не срочно) реализовать проверку state
             @RequestParam(name = "error", required = false) String error,
             @RequestParam(name = "error_description", required = false) String errorDescription
     ) throws IOException {
-        //boolean isLoggedIn = error == null;
-        //urlHelper.codeCached = authCode;
         String res = "";
         if (authCode != null)
         {
-            String accessToken = urlHelper.getAccessToken(authCode) + "\n\n";
-            res += urlHelper.getPersonData(accessToken);
+            String accessToken = esiaManager.getAccessToken(authCode) + "\n\n";
+            res += esiaManager.getPersonData(accessToken);
         }
         /*String result = "code:" + authCode +
                 "\n\nstate:" + state +
                 "\n\nsecret:" + urlHelper.secretCached +
                 "\n\nerror:" + error +
-                "\n\ndescription:" + errorDescription +
-                "\n\nloggedIn:"+ isLoggedIn;*/
+                "\n\ndescription:" + errorDescription;
+        */
 
         //if (!res.equals("")) result += "\n\njson:" + res;
-        return res; //result;
+        return res;
     }
 
     @PostMapping(value = "/esia/login/success", produces = MediaType.APPLICATION_JSON_VALUE)

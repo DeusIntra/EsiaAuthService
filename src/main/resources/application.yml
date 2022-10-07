@@ -1,7 +1,7 @@
 server.port: 8080
 
 ESIA_CLIENT_ID: PILOT10
-SCOPE: "mobile email"
+SCOPE: "mobile email fullname" # gender birthdate citizenship snils inn id_doc birthplace"
 ESIA_KEYSTORE_ALIAS: "rnd-F-B0FC-C706-7DF9-61A1-97BA-A318-D338"
 ESIA_PRIVATE_KEY_PASSWORD: "2969719"
 ESIA_SERV: https://esia-portal1.test.gosuslugi.ru # https://esia.gosuslugi.ru
