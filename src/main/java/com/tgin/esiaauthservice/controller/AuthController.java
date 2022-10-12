@@ -36,21 +36,10 @@ public class AuthController {
         return new RedirectView(loginUrl); //"redirect:" + esiaAuthUrl;
     }
 
-    /*
-    @GetMapping(path = "/esia/isLoggedIn", produces = "application/json")
-    public String isLoggedIn(
-            @RequestParam(name = "secret", required = false) String clientSecret
-    ) throws IOException {
-
-        String loggedIn = urlHelper.isLoggedIn(clientSecret);
-        return loggedIn;
-    }
-    */
-
-    @GetMapping(value = "/esia/login/success", produces = "text/plain") // MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/esia/login/success", produces = MediaType.APPLICATION_JSON_VALUE)
     public String oauthSuccessLogin(
             @RequestParam(name = "code", required = false) String authCode,
-            @RequestParam(name = "state", required = false) String state, // TODO: (не срочно) реализовать проверку state
+            @RequestParam(name = "state", required = false) String state,
             @RequestParam(name = "error", required = false) String error,
             @RequestParam(name = "error_description", required = false) String errorDescription
     ) throws IOException {
@@ -60,14 +49,6 @@ public class AuthController {
             String accessToken = esiaManager.getAccessToken(authCode) + "\n\n";
             res += esiaManager.getPersonData(accessToken);
         }
-        /*String result = "code:" + authCode +
-                "\n\nstate:" + state +
-                "\n\nsecret:" + urlHelper.secretCached +
-                "\n\nerror:" + error +
-                "\n\ndescription:" + errorDescription;
-        */
-
-        //if (!res.equals("")) result += "\n\njson:" + res;
         return res;
     }
 

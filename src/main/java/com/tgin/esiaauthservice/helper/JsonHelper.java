@@ -5,9 +5,11 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class JsonHelper {
 
@@ -31,6 +33,14 @@ public class JsonHelper {
 
     public static JsonNode parseJson(String json) throws JsonProcessingException {
         return mapper.readTree(json);
+    }
+
+    public static ArrayNode parseArrayNode(ArrayList<String> values) {
+        ArrayNode arrNode = mapper.createArrayNode();
+        for (String v : values) {
+            arrNode.add(v);
+        }
+        return arrNode;
     }
 
     public static String toJsonString(ArrayList<String> list) throws JsonProcessingException {

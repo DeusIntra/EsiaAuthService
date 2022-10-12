@@ -2,6 +2,10 @@ package com.tgin.esiaauthservice;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+
 import com.tgin.esiaauthservice.helper.CryptoHelper;
 import com.tgin.esiaauthservice.helper.HttpRequestHelper;
 import com.tgin.esiaauthservice.helper.JsonHelper;
@@ -53,60 +57,9 @@ public class EsiaManager {
         return url;
     }
 
-    /*
-    public String isLoggedIn(String client_secret) throws IOException { // pg 152
-
-        String timestamp = timestampUrlFormat(cryptoHelper.generateTimestamp());
-        String response_type = "code";
-        String newState = cryptoHelper.generateState();
-        String client_id = esiaProperties.getClientId();
-
-        if (client_secret == null) client_secret = secretCached;
-
-        String url = esiaProperties.getAuthCodeUrl() +
-                "?timestamp=" + timestamp +
-                "&scope=" + esiaProperties.getScope() +
-                "&response_type=" + response_type +
-                "&redirect_uri=" + esiaProperties.getReturnUrl() +
-                "&state=" + newState +
-                "&prompt=" + "none" +
-                "&client_id=" + client_id +
-                "&client_secret=" + client_secret +
-                "&code=" + codeCached;
-
-        return getRequest(url);
-    }
-
-     */
-
     public String getLogoutUrl() {
         return esiaProperties.getLogoutUrl() + "?client_id=" + esiaProperties.getClientId();
     }
-
-    /*
-    public String getIdToken(String authCode) throws IOException {
-        String clientId = esiaProperties.getClientId();
-        String state = cryptoHelper.generateState();
-        String timestamp = cryptoHelper.generateTimestamp(); //timestampUrlFormat(cryptoHelper.generateTimestamp());
-        String secret = cryptoHelper.generateClientSecret(clientId, state, timestamp, scope);
-
-        List<NameValuePair> nvps = new ArrayList<>();
-        nvps.add(new BasicNameValuePair("client_id", clientId));
-        nvps.add(new BasicNameValuePair("code", authCode));
-        nvps.add(new BasicNameValuePair("grant_type", "authorization_code"));
-        nvps.add(new BasicNameValuePair("client_secret", secret));
-        nvps.add(new BasicNameValuePair("state", state));
-        nvps.add(new BasicNameValuePair("redirect_uri", esiaProperties.getReturnUrl()));
-        nvps.add(new BasicNameValuePair("scope", scope));
-        nvps.add(new BasicNameValuePair("timestamp", timestamp));
-        nvps.add(new BasicNameValuePair("token_type", "Bearer"));
-
-        String json = postRequest(accessMarkerUrl, nvps);
-        System.out.println("\n\n"+json+"\n\n");
-        return json;
-    }
-
-     */
 
     public String getAccessToken(String authCode) throws IOException {
 
@@ -137,9 +90,15 @@ public class EsiaManager {
         String personInfoJsonStr = getPersonInfo(username, accessToken);
 
         ArrayList<String> contactsList = getContacts(username, accessToken);
-        String contactsJsonStr = JsonHelper.toJsonString(contactsList);
 
-        return personInfoJsonStr + "\n\n" + contactsJsonStr;
+        JsonNode personInfoNode = JsonHelper.parseJson(personInfoJsonStr);
+
+        ObjectNode res = ((ObjectNode)personInfoNode);
+        ArrayNode arrNode = JsonHelper.parseArrayNode(contactsList);
+
+        res.putPOJO("contacts", arrNode);
+
+        return res.toPrettyString();
     }
 
     private String getPersonInfo(String username, String accessToken) throws IOException {
