@@ -1,7 +1,8 @@
 server.port: 8080
+server-address: http://localhost
 
 ESIA_CLIENT_ID: PILOT10
-SCOPE: "mobile email fullname" # gender birthdate citizenship snils inn id_doc birthplace"
+SCOPE: "openid mobile email fullname snils" # gender birthdate citizenship snils inn id_doc birthplace"
 ESIA_KEYSTORE_ALIAS: "rnd-F-B0FC-C706-7DF9-61A1-97BA-A318-D338"
 ESIA_PRIVATE_KEY_PASSWORD: "2969719"
 ESIA_SERV: https://esia-portal1.test.gosuslugi.ru # https://esia.gosuslugi.ru
@@ -17,6 +18,7 @@ esia:
   token-url: ${ESIA_SERV}${ESIA_TOKEN_POINT}
   info-url: ${ESIA_SERV}${ESIA_INFO_POINT}
   logout-url: ${ESIA_SERV}${ESIA_LOGOUT_POINT}
-  return-url: http://localhost:${server.port}/esia/login/success
+  login-return-url: ${server-address}:${server.port}/esia/login/success
+  logout-return-url: ${server-address}:${server.port}/esia/logout/success
   keystore-alias: ${ESIA_KEYSTORE_ALIAS}
   private-key-password: ${ESIA_PRIVATE_KEY_PASSWORD}

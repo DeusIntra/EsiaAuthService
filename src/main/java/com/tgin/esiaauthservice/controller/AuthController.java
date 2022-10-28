@@ -58,8 +58,10 @@ public class AuthController {
     }
 
     @GetMapping(value = "/esia/logout/success", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String samlLogoutSuccess() throws NotImplementedException {
-        throw new NotImplementedException();
+    public String samlLogoutSuccess(
+            @RequestParam(name = "result") String result
+    ) {
+        return result;
     }
 
 }

@@ -16,7 +16,8 @@ public class EsiaProperties {
     private final String infoUrl;
     private final String logoutUrl;
 
-    private final String returnUrl;
+    private final String loginReturnUrl;
+    private final String logoutReturnUrl;
     private final String keystoreAlias;
     private final String privateKeyPassword;
 }

@@ -12,6 +12,7 @@ import com.tgin.esiaauthservice.helper.JsonHelper;
 
 import lombok.RequiredArgsConstructor;
 
+import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.core5.http.NameValuePair;
 import org.apache.hc.core5.http.message.BasicNameValuePair;
 
@@ -42,7 +43,7 @@ public class EsiaManager {
 
         String timestampUrlEncoded = timestampUrlFormat(timestamp);
 
-        String redirectUrlEncoded = urlFormat(esiaProperties.getReturnUrl());
+        String redirectUrlEncoded = urlFormat(esiaProperties.getLoginReturnUrl());
 
         String url = esiaProperties.getAuthCodeUrl() +
                 "?client_id=" + clientId +
@@ -58,8 +59,36 @@ public class EsiaManager {
     }
 
     public String getLogoutUrl() {
-        return esiaProperties.getLogoutUrl() + "?client_id=" + esiaProperties.getClientId();
+        String url = esiaProperties.getLogoutUrl() +
+                "?client_id=" + esiaProperties.getClientId() +
+                "&redirect_uri=" + urlFormat(esiaProperties.getLogoutReturnUrl());
+
+        //url = "?client_id=123ABC45&redirect_uri=https%3A%2F%2Fyour-site.ru%2Fauth"
+        String res;
+        try {
+
+            res = HttpRequestHelper.getRequest(url);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return url;
     }
+
+    public String logout() throws IOException {
+        return HttpRequestHelper.getRequest(getLogoutUrl());
+    }
+
+    public String logoutWithResult() throws IOException {
+        String result = logout();
+        String binJSON = HttpRequestHelper.getRequest("https://httpbin.org/get?result=true");
+        JsonNode bin = JsonHelper.parseJson(binJSON);
+        var c = bin.get("args").get("result").asBoolean();
+        return result;
+    }
+/*
+    public String getLogoutUrl(String redirectUrl) {
+        return getLogoutUrl() + "&redirect_uri=" + redirectUrl;
+    }*/
 
     public String getAccessToken(String authCode) throws IOException {
 
@@ -74,7 +103,7 @@ public class EsiaManager {
         nvps.add(new BasicNameValuePair("grant_type", "authorization_code"));
         nvps.add(new BasicNameValuePair("client_secret", secret));
         nvps.add(new BasicNameValuePair("state", state));
-        nvps.add(new BasicNameValuePair("redirect_uri", esiaProperties.getReturnUrl()));
+        nvps.add(new BasicNameValuePair("redirect_uri", esiaProperties.getLoginReturnUrl()));
         nvps.add(new BasicNameValuePair("scope", esiaProperties.getScope()));
         nvps.add(new BasicNameValuePair("timestamp", timestamp));
         nvps.add(new BasicNameValuePair("token_type", "Bearer"));
